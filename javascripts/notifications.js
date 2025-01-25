@@ -1,31 +1,63 @@
+// Get elements
 notificationsMenu = document.getElementById("notificationsMenu")
 notificationsMenu_button = document.getElementById("notificationsMenu-button")
 let notifications_ul = document.getElementById("notificationsMenu-ul")
+let notifications = document.querySelectorAll(".notification")
 
+// Initial notifications list
 let notificationsList = [
     {
+        id: 1,
         icon: "wifi.png",
-        message: "Connected to Wi-Fi network",
+        message: "Connected to Wi-Fi network.",
         type: "read"
     }
 ]
 
-function addNotification(icon, message) {
+// Display all notifications on load
+function displayAllNotifications() {
+    notificationsList.forEach(notification => {
+        displayNotification(notification)
+    })
+}
+displayAllNotifications()
+
+// Display a single notification
+function displayNotification(notificationData) {
     let notification = document.createElement("li")
+    notification.id = `notification-${notificationData.id}`
     notification.classList.add("notification")
-    notification.innerHTML = `<img src="./Images/icons/${icon}" alt="notification icon"><p>${message}</p>`
+    notification.innerHTML = `<img src="./Images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
     notifications_ul.appendChild(notification)
-    notificationsList.push({icon, message, type: "unread"})
+    notifications = document.querySelectorAll(".notification")
+    updateDeleteListeners()
+}
+
+// Add a new notification
+function newNotification(icon, message) {
+    let newNotificationData = {id: notificationsList.length + 1, icon, message, type: "unread"}
+    notificationsList.push(newNotificationData)
+    displayNotification(newNotificationData)
     updateUnreadStatus()
     newToast(icon, message)
 }
 
+// Delete a notification
+function deleteNotification(notification) {
+    console.log(notification);
+    notificationsList.splice(notification.id - 1, 1)
+    notifications_ul.removeChild(notification)
+    updateUnreadStatus()
+}
+
+// Clear all notifications
 function clearNotifications() {
     notifications_ul.innerHTML = ""
     notificationsList = []
     updateUnreadStatus()
 }
 
+// Update unread status
 function updateUnreadStatus() {
     const hasUnread = notificationsList.some(notification => notification.type === "unread")
     if (hasUnread) {
@@ -33,29 +65,32 @@ function updateUnreadStatus() {
     } else {
         notificationsMenu_button.classList.remove("unread")
     }
-    notificationsMenu_button.setAttribute("data-unread", notificationsList.filter(notification => notification.type === "unread").length);
+    notificationsMenu_button.setAttribute("data-unread", notificationsList.filter(notification => notification.type === "unread").length)
 }
 
-notificationsList.forEach(notification => {
-    addNotification(notification.icon, notification.message)
-})
-
-updateUnreadStatus()
-
-function newToast (icon,message) {
+// Show a toast notification
+function newToast(icon, message) {
     let toast = document.createElement("div")
-    // let messageContainer = document.createElement("p")
-    // toast.appendChild(messageContainer)
     toast.classList.add("toast")
     toast.innerHTML = `<img src="./Images/icons/${icon}"><p>${message}</p>`
     document.body.appendChild(toast)
     setTimeout(() => {
-        toast.remove();
+        toast.remove()
     }, 3000)
 }
 
+// Event listeners
+function updateDeleteListeners() {
+    notifications.forEach(notification => {
+        notification.addEventListener("click", () => {
+            deleteNotification(notification)
+        })
+    })
+}
+
+// Example usage
 setTimeout(() => {
-    addNotification("notifications.png", "New notification received")
+    newNotification("notifications.png", `New login at ${new Date().toLocaleTimeString()}`)
 }, 5000)
 
-console.log("working notifications.js");
+console.log("working notifications.js")

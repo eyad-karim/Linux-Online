@@ -7,7 +7,7 @@ notificationsMenu_button.addEventListener("click",() => {
     notificationsMenu.classList.toggle("open")
     notificationsList.forEach(notification => {
         if (notification.type === "unread") {
-            notification.type = "read"
+            notification.type = "read";
         }
     })
     updateUnreadStatus()
