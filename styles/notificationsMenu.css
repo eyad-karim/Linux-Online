@@ -1,0 +1,125 @@
+#notificationsMenu{
+    /* position */
+    position: fixed;
+    top: -100vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* area */
+    width: 500px;
+    /* style */
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid #ccc;
+    /* display */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* transition */
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    /* others */
+    overflow: hidden;
+    user-select: none;
+    z-index: 201;
+}
+
+#notificationsMenu-button.unread::before{
+    content: attr(data-unread);
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+
+#notificationsMenu.open{
+    top: 60px;
+}
+
+#notificationsMenu > div#notificationsMenu-head{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+#notificationsMenu > div#notificationsMenu-head img{
+    transition-duration: 0.3s;
+}
+#notificationsMenu > div#notificationsMenu-head img:hover{
+    opacity: 0.5;
+}
+#notificationsMenu > div#notificationsMenu-head img:active{
+    transform: scale(80%);
+}
+#notificationsMenu img{
+    max-width: 30px;
+    max-height: 30px;
+}
+#notificationsMenu #notificationsMenu-ul{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+    padding: 10px;
+    list-style-type: none;
+}
+#notificationsMenu #notificationsMenu-ul > li{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+    align-items: center;
+    /* border-bottom: 1px solid #626262; */
+}
+#notificationsMenu #notificationsMenu-ul > li:hover{
+    background-color: #ffffff;
+}
+
+.toast {
+    position: fixed;
+    top: -100vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 400px;
+    padding: 20px;
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    z-index: 301;
+    animation: toast 3s;
+}
+@keyframes toast {
+    0% {
+        top: -100vh;
+    }
+    10% {
+        top: 60px;
+    }
+    90% {
+        top: 60px;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+.toast > img {
+    max-width: 50px;
+    max-height: 50px;
+}

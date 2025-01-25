@@ -1,0 +1,61 @@
+#startMenu {
+    position: fixed;
+    bottom: -100vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 500px;
+    width: 800px;
+    padding: 10px;
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border: 1px solid #ccc;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    z-index: 200;
+}
+#startMenu.open{
+    bottom: 80px;
+}
+#startMenu > ul#allAppsList {
+    width: 300px;
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+#startMenu > ul#allAppsList li {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    transition-duration: 0.4s;
+    user-select: none;
+}
+#startMenu > ul#allAppsList li:hover{
+    background-color: #fff;
+    transform: scale(105%);
+}
+#startMenu > ul#allAppsList li > img{
+    max-width: 30px;
+    max-height: 30px;
+    transition-duration: 0.3s;
+}
+#startMenu > ul#allAppsList li:active > img{
+    transform: scale(80%);
+}
+
+#startMenu > ul#allAppsList input{
+    top: 0;
+    position: sticky;
+}

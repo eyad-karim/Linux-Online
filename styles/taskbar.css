@@ -1,0 +1,44 @@
+#taskbar{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: var(--transparent-white);
+    display: inline;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid #ccc;
+    z-index: 300;
+}
+#taskbar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 5px;
+}
+#taskbar ul li{
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+#taskbar ul li:hover{
+    background-color: #ffffff;
+    transform: scale(110%);
+}
+#taskbar ul li img{
+    max-width: 34px;
+    max-height: 34px;
+    transition-duration: 0.3s;
+    user-select: none;
+}
+#taskbar ul li:active img{
+    transform: scale(80%);
+}

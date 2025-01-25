@@ -1,0 +1,44 @@
+header{
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    user-select: none;
+    z-index: 300;
+}
+
+header > div{
+    padding: 5px;
+    border-radius: 100px;
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+header > div > div{
+    padding: 5px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition-duration: 0.3s;
+}
+header > div > div:hover{
+    background-color: #ffffff;
+}
+header > div > div:active{
+    transform: scale(90%);
+}
+
+header > div img{
+    max-width: 20px;
+    max-height: 20px;
+}

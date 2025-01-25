@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVERYTHING Linux</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/taskbar.css">
+    <link rel="stylesheet" href="styles/startMenu.css">
+    <link rel="stylesheet" href="styles/controlMenu.css">
+    <link rel="stylesheet" href="styles/notificationsMenu.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main>
+        <header>
+            <div id="notificationsMenu-button" data-unread="1">
+                <div>
+                    <span>10 : 30 PM</span>
+                    <img src="./Images/icons/notifications.png" alt="notifications">
+                </div>
+            </div>
+            <div id="controlMenu-button">
+                <div>
+                    <img src="./Images/icons/wifi.png" alt="Wifi Icon">
+                    <img src="./Images/icons/bluetooth.png" alt="bluetooth icon">
+                    <img src="./Images/icons/volume_up.png" alt="Volume icon">
+                    <img src="./Images/icons/settings.png" alt="settings icon">
+                </div>
+            </div>
+        </header>
+        <div id="controlMenu">
+            <div id="controlMenu-head">
+                <span>Control menu</span>
+                <img src="./Images/icons/settings.png" alt="settings icon">
+            </div>
+            <div id="controlMenu-quickOptions">
+                <div>
+                    <label for="wifiToggle-button">
+                        <img src="./Images/icons/wifi.png" alt="Wifi Icon">
+                        <span>Wifi</span>
+                    </label>
+                    <input type="checkbox" id="wifiToggle-button" class="toggle-input">
+                </div>
+                <div>
+                    <label for="bluetoothToggle-button">
+                        <img src="./Images/icons/bluetooth.png" alt="bluetooth icon">
+                        <span>Bluetooth</span>
+                    </label>
+                    <input type="checkbox" id="bluetoothToggle-button" class="toggle-input">
+                </div>
+                <div>
+                    <label for="bta3">
+                        <img src="./Images/icons/volume_up.png" alt="Volume icon">
+                        <span>sound</span>
+                    </label>
+                    <input id="bta3" type="range" min="0" max="100" value="50">
+                </div>
+            </div>
+        </div>
+        <div id="notificationsMenu">
+            <div id="notificationsMenu-head">
+                <span>notifications menu</span>
+                <img src="./Images/icons/settings.png" alt="settings icon">
+            </div>
+            <ul id="notificationsMenu-ul">
+            </ul>
+        </div>
+        <div id="desktop">desktop</div>
+        <div id="startMenu">
+            <ul id="allAppsList">
+                <input type="search" placeholder="Search apps" id="startMenuAppsSearch">
+            </ul>
+            <div>s</div>
+        </div>
+        <div id="taskbar">
+            <ul id="taskbar-apps-ul">
+                <li id="startMenu-button">
+                    <img src="./Images/taskbar/Logo.png" alt="linux logo" draggable="false">
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script src="./javascripts/main.js"></script>
+    <script src="./javascripts/startMenu.js"></script>
+    <script src="./javascripts/taskbar.js"></script>
+    <script src="./javascripts/headerMenus.js"></script>
+    <script src="./javascripts/notifications.js"></script>
+</body>
+</html>
