@@ -1,8 +1,9 @@
 // Get elements
-notificationsMenu = document.getElementById("notificationsMenu")
-notificationsMenu_button = document.getElementById("notificationsMenu-button")
-let notifications_ul = document.getElementById("notificationsMenu-ul")
+notificationsMenu = document.getElementById("notificationsMenu") // don't put let in front of this because it's already declared
+notificationsMenu_button = document.getElementById("notificationsMenu-button") // don't put let in front of this because it's already declared
+let notifications_container = document.getElementById("notificationsMenu-container")
 let notifications = document.querySelectorAll(".notification")
+let notificationsMenu_clearAll_button = document.getElementById("notificationsMenu-clearAll-button")
 
 // Initial notifications list
 let notificationsList = [
@@ -28,7 +29,7 @@ function displayNotification(notificationData) {
     notification.id = `notification-${notificationData.id}`
     notification.classList.add("notification")
     notification.innerHTML = `<img src="./Images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
-    notifications_ul.appendChild(notification)
+    notifications_container.appendChild(notification)
     notifications = document.querySelectorAll(".notification")
     updateDeleteListeners()
 }
@@ -46,13 +47,13 @@ function newNotification(icon, message) {
 function deleteNotification(notification) {
     console.log(notification);
     notificationsList.splice(notification.id - 1, 1)
-    notifications_ul.removeChild(notification)
+    notifications_container.removeChild(notification)
     updateUnreadStatus()
 }
 
 // Clear all notifications
-function clearNotifications() {
-    notifications_ul.innerHTML = ""
+function clearAllNotifications() {
+    notifications_container.innerHTML = ""
     notificationsList = []
     updateUnreadStatus()
 }
@@ -73,20 +74,22 @@ function newToast(icon, message) {
     let toast = document.createElement("div")
     toast.classList.add("toast")
     toast.innerHTML = `<img src="./Images/icons/${icon}"><p>${message}</p>`
-    document.body.appendChild(toast)
+    document.getElementById("toast-container").appendChild(toast)
     setTimeout(() => {
         toast.remove()
     }, 3000)
 }
 
 // Event listeners
-function updateDeleteListeners() {
+function updateDeleteListeners() { // adds delete event listener to the new notifications
     notifications.forEach(notification => {
-        notification.addEventListener("click", () => {
+        notification.addEventListener("dblclick", () => {
             deleteNotification(notification)
         })
     })
 }
+
+notificationsMenu_clearAll_button.addEventListener("click", clearAllNotifications)
 
 // Example usage
 setTimeout(() => {

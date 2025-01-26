@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVERYTHING Linux</title>
+    <title>Linux Online</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
@@ -17,7 +17,7 @@
 <body>
     <main>
         <header>
-            <div id="notificationsMenu-button" data-unread="1">
+            <div id="notificationsMenu-button" data-unread="1"> <!-- data-unread="1" means that there is 1 unread notification -->
                 <div>
                     <span>10 : 30 PM</span>
                     <img src="./Images/icons/notifications.png" alt="notifications">
@@ -25,10 +25,9 @@
             </div>
             <div id="controlMenu-button">
                 <div>
-                    <img src="./Images/icons/wifi.png" alt="Wifi Icon">
-                    <img src="./Images/icons/bluetooth.png" alt="bluetooth icon">
-                    <img src="./Images/icons/volume_up.png" alt="Volume icon">
-                    <img src="./Images/icons/settings.png" alt="settings icon">
+                    <img id="wifi-icon" src="./Images/icons/wifi.png" alt="Wifi Icon">
+                    <img id="bluetooth-icon" src="./Images/icons/bluetooth.png" alt="bluetooth icon">
+                    <img id="volumeRange-icon" src="./Images/icons/volume_down.png" alt="Volume icon">
                 </div>
             </div>
         </header>
@@ -43,30 +42,31 @@
                         <img src="./Images/icons/wifi.png" alt="Wifi Icon">
                         <span>Wifi</span>
                     </label>
-                    <input type="checkbox" id="wifiToggle-button" class="toggle-input">
+                    <input type="checkbox" checked id="wifiToggle-button" class="toggle-input">
                 </div>
                 <div>
                     <label for="bluetoothToggle-button">
                         <img src="./Images/icons/bluetooth.png" alt="bluetooth icon">
                         <span>Bluetooth</span>
                     </label>
-                    <input type="checkbox" id="bluetoothToggle-button" class="toggle-input">
+                    <input type="checkbox" checked id="bluetoothToggle-button" class="toggle-input">
                 </div>
                 <div>
-                    <label for="bta3">
+                    <label for="volumeRange-input">
                         <img src="./Images/icons/volume_up.png" alt="Volume icon">
                         <span>sound</span>
                     </label>
-                    <input id="bta3" type="range" min="0" max="100" value="50">
+                    <input id="volumeRange-input" type="range" min="0" max="100" value="50">
                 </div>
             </div>
         </div>
         <div id="notificationsMenu">
             <div id="notificationsMenu-head">
                 <span>notifications menu</span>
+                <img id="notificationsMenu-clearAll-button" src="./Images/icons/clear_all.png" alt="clear all icon">
                 <img src="./Images/icons/settings.png" alt="settings icon">
             </div>
-            <ul id="notificationsMenu-ul">
+            <ul id="notificationsMenu-container">
             </ul>
         </div>
         <div id="desktop">desktop</div>
@@ -79,15 +79,17 @@
         <div id="taskbar">
             <ul id="taskbar-apps-ul">
                 <li id="startMenu-button">
-                    <img src="./Images/taskbar/Logo.png" alt="linux logo" draggable="false">
+                    <img src="./Images/logos/Logo.png" alt="linux logo" draggable="false">
                 </li>
             </ul>
         </div>
+        <ul id="toast-container"></ul>
     </main>
     <script src="./javascripts/main.js"></script>
     <script src="./javascripts/startMenu.js"></script>
     <script src="./javascripts/taskbar.js"></script>
     <script src="./javascripts/headerMenus.js"></script>
     <script src="./javascripts/notifications.js"></script>
+    <script src="./javascripts/controlMenu.js"></script>
 </body>
 </html>
