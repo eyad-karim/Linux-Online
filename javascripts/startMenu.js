@@ -36,7 +36,7 @@ let startMenu_apps_list = [
 function addStartMenu_app(appName,appIcon) {
     let app = document.createElement("li")
     app.classList.add("startMenu-app")
-    app.innerHTML = `<img src="./Images/logos/${appIcon}" alt="${appName}"><span>${appName}</span>`;
+    app.innerHTML = `<img src="./images/logos/${appIcon}" alt="${appName}"><span>${appName}</span>`;
     allAppsList.appendChild(app)
     startMenu_apps_list.push({appName,appIcon})
 }

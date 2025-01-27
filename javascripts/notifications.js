@@ -9,7 +9,7 @@ let notificationsMenu_clearAll_button = document.getElementById("notificationsMe
 let notificationsList = [
     {
         id: 1,
-        icon: "wifi.png",
+        icon: "wifi.svg",
         message: "Connected to Wi-Fi network.",
         type: "read"
     }
@@ -28,7 +28,7 @@ function displayNotification(notificationData) {
     let notification = document.createElement("li")
     notification.id = `notification-${notificationData.id}`
     notification.classList.add("notification")
-    notification.innerHTML = `<img src="./Images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
+    notification.innerHTML = `<img src="./images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
     notifications_container.appendChild(notification)
     notifications = document.querySelectorAll(".notification")
     updateDeleteListeners()
@@ -73,7 +73,7 @@ function updateUnreadStatus() {
 function newToast(icon, message) {
     let toast = document.createElement("div")
     toast.classList.add("toast")
-    toast.innerHTML = `<img src="./Images/icons/${icon}"><p>${message}</p>`
+    toast.innerHTML = `<img src="./images/icons/${icon}"><p>${message}</p>`
     document.getElementById("toast-container").appendChild(toast)
     setTimeout(() => {
         toast.remove()
@@ -93,7 +93,7 @@ notificationsMenu_clearAll_button.addEventListener("click", clearAllNotification
 
 // Example usage
 setTimeout(() => {
-    newNotification("notifications.png", `New login at ${new Date().toLocaleTimeString()}`)
+    newNotification("notifications.svg", `New login at ${new Date().toLocaleTimeString()}`)
 }, 5000)
 
 console.log("working notifications.js")
