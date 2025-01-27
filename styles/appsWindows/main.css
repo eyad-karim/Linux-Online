@@ -1,0 +1,109 @@
+.appWindow{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    min-width: 200px;
+    min-height: 200px;
+    overflow: hidden;
+    /* style */
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    box-shadow: 0px 16px 20px -10px rgba(0, 0, 0, 0.25);
+    display: flex;
+}
+
+.appWindow .appWindow_options{
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* background-color: var(--transparent-white); */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+.appWindow .appWindow_options span{
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    transition-duration: 0.3s;
+}
+.appWindow .appWindow_options span img{
+    width: 25px;
+    height: 25px;
+}
+.appWindow .appWindow_options span:hover{
+    background-color: #ffffff;
+}
+
+.appWindow .appWindow_content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.appWindow .appWindow_content header{
+    background-color: var(--transparent-white);
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+}
+.appWindow .appWindow_content .appWindow_body{
+    flex-grow: 1;
+}
+
+.appWindow .appWindow-tools .appWindow-resize-x{
+    height: 100%;
+    width: 6px;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+}
+.appWindow .appWindow-tools .appWindow-resize-x.resize-right{
+    right: 0px;
+}
+.appWindow .appWindow-tools .appWindow-resize-x.resize-left{
+    left: 0;
+}
+.appWindow .appWindow-tools .appWindow-resize-y{
+    width: 100%;
+    height: 6px;
+    cursor: ns-resize;
+    position: absolute;
+    left: 0;
+}
+.appWindow .appWindow-tools .appWindow-resize-y.resize-bottom{
+    bottom: 0;
+}
+.appWindow .appWindow-tools .appWindow-resize-y.resize-top{
+    top: 0;
+}
+.appWindow .appWindow-tools .appWindow-resize-xy{
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize;
+    position: absolute;
+}
+.appWindow .appWindow-tools .appWindow-resize-xy.resize-bottom-right{
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+}
+.appWindow .appWindow-tools .appWindow-resize-xy.resize-bottom-left{
+    left: 0;
+    bottom: 0;
+    cursor: nesw-resize;
+}
+.appWindow .appWindow-tools .appWindow-resize-xy.resize-top-right{
+    right: 0;
+    top: 0;
+    cursor: nesw-resize;
+}
+.appWindow .appWindow-tools .appWindow-resize-xy.resize-top-left{
+    left: 0;
+    top: 0;
+    cursor: nwse-resize;
+}

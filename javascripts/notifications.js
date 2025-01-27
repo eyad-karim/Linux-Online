@@ -11,12 +11,13 @@ let notificationsList = [
         id: 1,
         icon: "wifi.svg",
         message: "Connected to Wi-Fi network.",
-        type: "read"
+        type: "unread"
     }
 ]
 
 // Display all notifications on load
 function displayAllNotifications() {
+    updateUnreadStatus()
     notificationsList.forEach(notification => {
         displayNotification(notification)
     })
@@ -94,6 +95,6 @@ notificationsMenu_clearAll_button.addEventListener("click", clearAllNotification
 // Example usage
 setTimeout(() => {
     newNotification("notifications.svg", `New login at ${new Date().toLocaleTimeString()}`)
-}, 5000)
+}, 2000)
 
 console.log("working notifications.js")

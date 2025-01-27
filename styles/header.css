@@ -1,8 +1,8 @@
-header{
+main > header{
     position: fixed;
     top: 5px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translate(-50%,0);
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -11,7 +11,7 @@ header{
     z-index: 300;
 }
 
-header > div{
+main > header > div{
     padding: 5px;
     border-radius: 100px;
     background-color: var(--transparent-white);
@@ -22,7 +22,7 @@ header > div{
     justify-content: center;
     border: 1px solid #ccc;
 }
-header > div > div{
+main > header > div > div{
     padding: 5px;
     border-radius: 100px;
     display: flex;
@@ -31,14 +31,14 @@ header > div > div{
     gap: 5px;
     transition-duration: 0.3s;
 }
-header > div > div:hover{
+main > header > div > div:hover{
     background-color: #ffffff;
 }
-header > div > div:active{
+main > header > div > div:active{
     transform: scale(90%);
 }
 
-header > div img{
+main > header > div img{
     max-width: 20px;
     max-height: 20px;
 }
