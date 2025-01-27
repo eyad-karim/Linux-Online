@@ -29,16 +29,3 @@ function sortInFront(appWindow) {
     console.log(zIndexList);
     
 }
-
-// function sortInBack(elmnt) {
-//     let foucesedWindow = zIndexList.splice(zIndexList.indexOf(elmnt.id),1)[0];    
-//     let newZIndexList = [...zIndexList,foucesedWindow];
-//     zIndexList = newZIndexList;
-//     for(i=0;i<zIndexList.length;i++){
-//         let WindowEl = document.getElementById(zIndexList[i]);
-//         WindowEl.style.zIndex = 100 + zIndexList.length - i;
-//     }
-//     console.log(zIndexList);
-//     console.log(OpenedWindowsEls);
-    
-// }

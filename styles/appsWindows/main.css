@@ -14,7 +14,7 @@
     display: flex;
 }
 
-.appWindow .appWindow_options{
+.appWindow .appWindow-options{
     position: absolute;
     right: 0;
     top: 0;
@@ -24,34 +24,36 @@
     align-items: center;
     justify-content: center;
 }
-.appWindow .appWindow_options span{
+.appWindow .appWindow-options span{
     padding: 5px;
     display: grid;
     place-items: center;
     transition-duration: 0.3s;
 }
-.appWindow .appWindow_options span img{
+.appWindow .appWindow-options span img{
     width: 25px;
     height: 25px;
 }
-.appWindow .appWindow_options span:hover{
+.appWindow .appWindow-options span:hover{
     background-color: #ffffff;
 }
 
-.appWindow .appWindow_content{
+.appWindow .appWindow-content{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.appWindow .appWindow_content header{
+.appWindow .appWindow-content header{
     background-color: var(--transparent-white);
     height: 35px;
+    padding: 0 10px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     user-select: none;
 }
-.appWindow .appWindow_content .appWindow_body{
+.appWindow .appWindow-content .appWindow-body{
     flex-grow: 1;
 }
 
@@ -106,4 +108,17 @@
     left: 0;
     top: 0;
     cursor: nwse-resize;
+}
+
+.appWindow .appWindow-footer{
+    background-color: var(--transparent-white);
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    user-select: none;
+    font-family: monospace;
+    font-weight: 300;
+    font-size: 12px;
 }

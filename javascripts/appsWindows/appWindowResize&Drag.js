@@ -1,6 +1,10 @@
 let appsWindows = document.querySelectorAll(".appWindow")
 
 appsWindows.forEach(appWindow => {
+    applyResizeAndDrag(appWindow)
+})
+
+function applyResizeAndDrag(appWindow) {
     dragElement(appWindow)
     
     // x resize
@@ -14,7 +18,8 @@ appsWindows.forEach(appWindow => {
     bottomLeftResizeElement(appWindow)
     topLeftResizeElement(appWindow)
     topRightResizeElement(appWindow)
-})
+}
+
 function dragElement(appWindow) {
     let appWindowName = appWindow.id.split("-")[0]
 
