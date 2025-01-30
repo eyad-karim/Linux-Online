@@ -1,4 +1,4 @@
-let commandes = {
+var commandes = {
     com1:{
         com2:{
             com3:{
@@ -11,5 +11,3 @@ let commandes = {
 }
 
 commandes["com1"]["com2"].fun()
-
-console.log("working cmd.js");

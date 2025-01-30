@@ -1,12 +1,20 @@
-let appsWindowsList = []
+var appsWindowsList = []
+function checkIfAppWindowNameAvailable(appWindowName, appWindowNumber) {
+    if (appsWindowsList.includes(`${appWindowName}${appWindowNumber}-appWindow`)) {
+        appWindowNumber++
+        return checkIfAppWindowNameAvailable(appWindowName, appWindowNumber)
+    } else {
+        return `${appWindowName}${appWindowNumber}-appWindow`
+    }
+
+}
 function newAppWindow(appWindowName) {
-    let div = document.createElement("div")
+    var div = document.createElement("div")
+
+    div.id=checkIfAppWindowNameAvailable(appWindowName, 0); //appWindow id
+    appsWindowsList.push(div.id) // add appWindow to the list
     
-    let numberOfTheSameApp = appsWindowsList.filter(app => app.includes(appWindowName)).length
-    div.id=`${appWindowName}${numberOfTheSameApp}-appWindow`;
-    appsWindowsList.push(div.id)
-    
-    div.classList.add("appWindow")
+    div.classList.add("appWindow") // add appWindow class
     div.style.width = "800px"
     div.style.height = "500px"
 
@@ -35,13 +43,23 @@ function newAppWindow(appWindowName) {
         <div id="${div.id}-resize-bottom-left" class="appWindow-resize-xy resize-bottom-left"></div>
         <div id="${div.id}-resize-bottom-right" class="appWindow-resize-xy resize-bottom-right"></div>
     </div>`;
-    document.querySelector("main").appendChild(div)
+    document.querySelector("main").appendChild(div) // add appWindow to the main
 
-    appsWindows = document.querySelectorAll(".appWindow")
-    addEachAppWindowToZIndexList()
-    addSortingForEachAppWindow()
+    appsWindows = document.querySelectorAll(".appWindow") // refresh appsWindows variable
+    addEachAppWindowToZIndexList(div.id) // add appWindow to the zIndexList
+    addSortingForEachAppWindow(div.id) // add sorting for appWindow
+    sortInFront(div) // sort appWindow in front
     
     // add drag and resize functions
     applyResizeAndDrag(div)
+    // add close function
+    document.getElementById(`${div.id}-close`).addEventListener("click", () => {
+        closeAppWindow(div)
+    })
 }
 
+function closeAppWindow(appWindow) {
+    appWindow.remove()
+    appsWindowsList = appsWindowsList.filter(app => app !== appWindow.id)
+    addEachAppWindowToZIndexList()
+}

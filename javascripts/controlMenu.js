@@ -1,7 +1,7 @@
-controlMenu = document.getElementById("controlMenu") // don't put let in front of this because it's already declared
-controlMenu_button = document.getElementById("controlMenu-button") // don't put let in front of this because it's already declared
-let volumeRange_input = document.getElementById("volumeRange-input")
-let volumeRange_icon = document.getElementById("volumeRange-icon")
+controlMenu = document.getElementById("controlMenu") // don't put var in front of this because it's already declared
+controlMenu_button = document.getElementById("controlMenu-button") // don't put var in front of this because it's already declared
+var volumeRange_input = document.getElementById("volumeRange-input")
+var volumeRange_icon = document.getElementById("volumeRange-icon")
 
 function checkTheVolumeRange() {
     if (volumeRange_input.value >= 66 ) {
@@ -18,8 +18,8 @@ volumeRange_input.addEventListener("mousemove",() => {
 })
 
 
-let wifiToggle_button = document.getElementById("wifiToggle-button");
-let wifi_icon = document.getElementById("wifi-icon");
+var wifiToggle_button = document.getElementById("wifiToggle-button");
+var wifi_icon = document.getElementById("wifi-icon");
 
 wifiToggle_button.addEventListener("change", () => {
     if (wifiToggle_button.checked) {
@@ -29,8 +29,8 @@ wifiToggle_button.addEventListener("change", () => {
     }
 });
 
-let bluetoothToggle_button = document.getElementById("bluetoothToggle-button");
-let bluetooth_icon = document.getElementById("bluetooth-icon");
+var bluetoothToggle_button = document.getElementById("bluetoothToggle-button");
+var bluetooth_icon = document.getElementById("bluetooth-icon");
 
 bluetoothToggle_button.addEventListener("change", () => {
     if (bluetoothToggle_button.checked) {

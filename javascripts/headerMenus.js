@@ -1,7 +1,7 @@
-let notificationsMenu = document.getElementById("notificationsMenu")
-let notificationsMenu_button = document.getElementById("notificationsMenu-button")
-let controlMenu = document.getElementById("controlMenu")
-let controlMenu_button = document.getElementById("controlMenu-button")
+var notificationsMenu = document.getElementById("notificationsMenu")
+var notificationsMenu_button = document.getElementById("notificationsMenu-button")
+var controlMenu = document.getElementById("controlMenu")
+var controlMenu_button = document.getElementById("controlMenu-button")
 
 notificationsMenu_button.addEventListener("click",() => {    
     notificationsMenu.classList.toggle("open")
@@ -28,5 +28,3 @@ desktop.addEventListener("click",() => {
 notificationsMenu_button.addEventListener("click",() => {
     controlMenu.classList.remove("open")
 })
-
-console.log("working headerMenus.js");

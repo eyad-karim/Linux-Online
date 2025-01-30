@@ -1,4 +1,4 @@
-let appsWindows = document.querySelectorAll(".appWindow")
+appsWindows = document.querySelectorAll(".appWindow")
 
 appsWindows.forEach(appWindow => {
     applyResizeAndDrag(appWindow)
@@ -21,7 +21,7 @@ function applyResizeAndDrag(appWindow) {
 }
 
 function dragElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
 
     var posX = 0,
         posY = 0,
@@ -71,7 +71,7 @@ function dragElement(appWindow) {
 
 
 function rightResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posX = 0,
         posOX = 0,
         width = appWindow.style.width.split("px")[0];
@@ -106,7 +106,7 @@ function rightResizeElement(appWindow) {
 }
 
 function leftResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posX = 0,
         posOX = 0,
         width = appWindow.style.width.split("px")[0];
@@ -144,7 +144,7 @@ function leftResizeElement(appWindow) {
 }
 
 function bottomResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         height = appWindow.style.height.split("px")[0];
@@ -180,7 +180,7 @@ function bottomResizeElement(appWindow) {
 }
 
 function topResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         height = appWindow.style.height.split("px")[0];
@@ -218,7 +218,7 @@ function topResizeElement(appWindow) {
 }
 
 function bottomRightResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
@@ -263,7 +263,7 @@ function bottomRightResizeElement(appWindow) {
 }
 
 function bottomLeftResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
@@ -311,7 +311,7 @@ function bottomLeftResizeElement(appWindow) {
 }
 
 function topRightResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
@@ -358,7 +358,7 @@ function topRightResizeElement(appWindow) {
 }
 
 function topLeftResizeElement(appWindow) {
-    let appWindowName = appWindow.id.split("-")[0]
+    var appWindowName = appWindow.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,

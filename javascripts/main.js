@@ -1,2 +1,2 @@
-let date = new Date();
-console.log("working main.js");
+var date = new Date();
+var appsWindows = document.querySelectorAll(".appWindow")

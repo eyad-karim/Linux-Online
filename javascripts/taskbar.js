@@ -1,7 +1,7 @@
-let taskbar = document.getElementById("taskbar")
+var taskbar = document.getElementById("taskbar")
 
-let taskbar_apps_ul = document.getElementById("taskbar-apps-ul")
-let taskbar_apps_list = [
+var taskbar_apps_ul = document.getElementById("taskbar-apps-ul")
+var taskbar_apps_list = [
     {
         appName: "Files",
         appIcon: "Files.png",
@@ -17,7 +17,7 @@ let taskbar_apps_list = [
 ]
 
 function addTaskbar_app(appName, appIcon) {
-    let app = document.createElement("li")
+    var app = document.createElement("li")
     app.id = `${appName}-taskbarOpenButton`
     app.classList.add("taskbar-app")
     app.innerHTML = `<img src="./images/logos/${appIcon}" alt="${appName}" draggable="false">`
@@ -32,6 +32,4 @@ taskbar_apps_list.forEach(app => {
     addTaskbar_app(app.appName, app.appIcon)
 })
 
-let taskbar_apps = document.querySelectorAll(".taskbar-app")
-
-console.log("working taskbar.js");
+var taskbar_apps = document.querySelectorAll(".taskbar-app")
