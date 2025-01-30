@@ -59,7 +59,7 @@ function newAppWindow(appWindowName) {
 }
 
 function closeAppWindow(appWindow) {
+    zIndexList = zIndexList.filter(app => app !== appWindow.id)    
     appWindow.remove()
     appsWindowsList = appsWindowsList.filter(app => app !== appWindow.id)
-    addEachAppWindowToZIndexList()
 }

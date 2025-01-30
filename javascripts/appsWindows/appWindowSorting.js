@@ -37,5 +37,4 @@ function sortInFront(appWindow) {
         appWindow.style.zIndex = 100 + (zIndexList.length - i);
     }
     console.log(zIndexList);
-    
 }
