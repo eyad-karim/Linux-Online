@@ -139,7 +139,3 @@
     font-weight: 300;
     font-size: 12px;
 }
-
-body[theme="dark"] .appWindow .appWindow-options span img{
-    filter: invert(1);
-}

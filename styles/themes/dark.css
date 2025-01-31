@@ -1,0 +1,32 @@
+body[theme="dark"] {
+    /* system background */
+    --system-background-image: url("../images/wallpapers/leafs.jpg");
+    /* primary colors */
+    --primary: #28a745;
+    --background1-color: #313131;
+    --background2-color: #1f1f1f;
+    /* others */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #313335;
+    --text-color: #ffffff;
+    --blur: 50px;
+    /* colors */
+    --red: #dc3545;
+    --green: #28a745;
+    --gray: #9fa7ad;
+}
+body[theme="dark"] .toast img{
+    filter: invert(1);
+}
+body[theme="dark"] .appWindow .appWindow-options span img{
+    filter: invert(1);
+}
+body[theme="dark"] #controlMenu img{
+    filter: invert(1);
+}
+body[theme="dark"] main > header img{
+    filter: invert(1);
+}
+body[theme="dark"] #notificationsMenu img{
+    filter: invert(1);
+}

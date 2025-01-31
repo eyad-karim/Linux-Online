@@ -42,7 +42,3 @@ main > header > div img{
     max-width: 20px;
     max-height: 20px;
 }
-
-body[theme="dark"] main > header img{
-    filter: invert(1);
-}

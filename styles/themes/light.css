@@ -1,0 +1,17 @@
+body[theme="light"] {
+    /* system background */
+    --system-background-image: url("../images/wallpapers/sunflowers.jpg");
+    /* primary colors */
+    --primary: #28a745;
+    --background1-color: #ffffff;
+    --background2-color: #e6e6e6cc;
+    /* others */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #B3B9C4;
+    --text-color: #212529;
+    --blur: 50px;
+    /* colors */
+    --red: #dc3545;
+    --green: #28a745;
+    --gray: #6c757d;
+}

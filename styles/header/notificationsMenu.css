@@ -90,7 +90,3 @@
 #notificationsMenu #notificationsMenu-container > li:hover{
     background-color: var(--background1-color);
 }
-
-body[theme="dark"] #notificationsMenu img{
-    filter: invert(1);
-}

@@ -86,7 +86,3 @@
     align-items: center;
     gap: 10px;
 }
-
-body[theme="dark"] #controlMenu img{
-    filter: invert(1);
-}
