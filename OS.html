@@ -6,20 +6,23 @@
     <title>Linux Online</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/taskbar.css">
-    <link rel="stylesheet" href="styles/startMenu.css">
-    <link rel="stylesheet" href="styles/controlMenu.css">
-    <link rel="stylesheet" href="styles/notificationsMenu.css">
-        <!-- AppsWindows -->
-         <link rel="stylesheet" href="styles/appsWindows/main.css">
+    <link rel="stylesheet" href="styles/toast.css">
+    <!-- start -->
+    <link rel="stylesheet" href="styles/start/startMenu.css">
+    <link rel="stylesheet" href="styles/start/taskbar.css">
+    <!-- header -->
+    <link rel="stylesheet" href="styles/header/header.css">
+    <link rel="stylesheet" href="styles/header/controlMenu.css">
+    <link rel="stylesheet" href="styles/header/notificationsMenu.css">
+    <!-- AppsWindows -->
+    <link rel="stylesheet" href="styles/appsWindows/main.css">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <main>
         <header>
-            <div id="notificationsMenu-button" data-unread="1"> <!-- data-unread="1" means that there is 1 unread notification -->
+            <div id="notificationsMenu-button" data-unread="1">
                 <div>
                     <span>10 : 30 PM</span>
                     <img src="./images/icons/dots.svg" alt="notifications">
@@ -88,14 +91,17 @@
         <ul id="toast-container"></ul>
     </main>
     <script src="./javascripts/main.js"></script>
-    <script src="./javascripts/startMenu.js"></script>
-    <script src="./javascripts/taskbar.js"></script>
-    <script src="./javascripts/headerMenus.js"></script>
-    <script src="./javascripts/notifications.js"></script>
-    <script src="./javascripts/controlMenu.js"></script>
+    <script src="./javascripts/toast.js"></script>
+    <!-- start -->
+    <script src="./javascripts/start/startMenu.js"></script>
+    <script src="./javascripts/start/taskbar.js"></script>
+    <!-- header -->
+    <script src="./javascripts/header/headerMenusToggle.js"></script>
+    <script src="./javascripts/header/notifications.js"></script>
+    <script src="./javascripts/header/controlMenu.js"></script>
     <!-- AppsWindows -->
-     <script src="./javascripts/appsWindows/appWindowResize&Drag.js"></script>
-     <script src="./javascripts/appsWindows/appWindowSorting.js"></script>
-     <script src="./javascripts/appsWindows/newAppWindow.js"></script>
+    <script src="./javascripts/appsWindows/appWindowResize&Drag.js"></script>
+    <script src="./javascripts/appsWindows/appWindowSorting.js"></script>
+    <script src="./javascripts/appsWindows/newAppWindow.js"></script>
 </body>
 </html>

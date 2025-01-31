@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%,0);
     padding: 5px;
-    margin: 5px;
+    margin-bottom: 5px;
     border-radius: 15px;
     background-color: var(--transparent-white);
     display: inline;

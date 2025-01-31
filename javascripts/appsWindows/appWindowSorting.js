@@ -1,30 +1,13 @@
 var zIndexList = []
-addEachAppWindowToZIndexList()
 
-function addSortingForEachAppWindow(appWindowID) {
-    if (appWindowID) {
-        document.getElementById(appWindowID).addEventListener('mousedown',() => {
-            sortInFront(document.getElementById(appWindowID))
-        })
-    } else {
-        appsWindows = document.querySelectorAll(".appWindow")
-        appsWindows.forEach((appWindow) => {
-            appWindow.addEventListener('mousedown',() => {
-                sortInFront(appWindow)
-            })
-        })
-    }
+function addSortingEventForAppWindow(appWindowID) {
+    document.getElementById(appWindowID).addEventListener('mousedown',() => {
+        console.log("mousedown");
+        sortInFront(document.getElementById(appWindowID))
+    })
 }
-addSortingForEachAppWindow()
-function addEachAppWindowToZIndexList(appWindowID) {
-    if (appWindowID) {
-        zIndexList[zIndexList.length] = appWindowID
-    } else {
-        appsWindows = document.querySelectorAll(".appWindow")
-        appsWindows.forEach((appWindow) => {
-            zIndexList[zIndexList.length] = appWindow.id
-        })
-    }
+function addAppWindowToZIndexList(appWindowID) {
+    zIndexList[zIndexList.length] = appWindowID
 }
 
 

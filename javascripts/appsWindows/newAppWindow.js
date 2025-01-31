@@ -46,8 +46,8 @@ function newAppWindow(appWindowName) {
     document.querySelector("main").appendChild(div) // add appWindow to the main
 
     appsWindows = document.querySelectorAll(".appWindow") // refresh appsWindows variable
-    addEachAppWindowToZIndexList(div.id) // add appWindow to the zIndexList
-    addSortingForEachAppWindow(div.id) // add sorting for appWindow
+    addAppWindowToZIndexList(div.id) // add appWindow to the zIndexList
+    addSortingEventForAppWindow(div.id) // add sorting for appWindow
     sortInFront(div) // sort appWindow in front
     
     // add drag and resize functions
@@ -59,6 +59,7 @@ function newAppWindow(appWindowName) {
 }
 
 function closeAppWindow(appWindow) {
+    console.log("closed");
     zIndexList = zIndexList.filter(app => app !== appWindow.id)    
     appWindow.remove()
     appsWindowsList = appsWindowsList.filter(app => app !== appWindow.id)

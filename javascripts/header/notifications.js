@@ -32,7 +32,7 @@ function displayNotification(notificationData) {
     notification.innerHTML = `<img src="./images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
     notifications_container.appendChild(notification)
     notifications = document.querySelectorAll(".notification")
-    updateDevareListeners()
+    updateDeleteListeners()
 }
 
 // Add a new notification
@@ -44,9 +44,8 @@ function newNotification(icon, message) {
     newToast(icon, message)
 }
 
-// Devare a notification
-function devareNotification(notification) {
-    console.log(notification);
+// Delete a notification
+function deleteNotification(notification) {
     notificationsList.splice(notification.id - 1, 1)
     notifications_container.removeChild(notification)
     updateUnreadStatus()
@@ -70,22 +69,11 @@ function updateUnreadStatus() {
     notificationsMenu_button.setAttribute("data-unread", notificationsList.filter(notification => notification.type === "unread").length)
 }
 
-// Show a toast notification
-function newToast(icon, message) {
-    var toast = document.createElement("div")
-    toast.classList.add("toast")
-    toast.innerHTML = `<img src="./images/icons/${icon}"><p>${message}</p>`
-    document.getElementById("toast-container").appendChild(toast)
-    setTimeout(() => {
-        toast.remove()
-    }, 3000)
-}
-
 // Event listeners
-function updateDevareListeners() { // adds devare event listener to the new notifications
+function updateDeleteListeners() { // adds delete event listener to the new notifications
     notifications.forEach(notification => {
         notification.addEventListener("dblclick", () => {
-            devareNotification(notification)
+            deleteNotification(notification)
         })
     })
 }
@@ -96,5 +84,3 @@ notificationsMenu_clearAll_button.addEventListener("click", clearAllNotification
 setTimeout(() => {
     newNotification("notifications.svg", `New login at ${new Date().toLocaleTimeString()}`)
 }, 2000)
-
-var date = new Date();

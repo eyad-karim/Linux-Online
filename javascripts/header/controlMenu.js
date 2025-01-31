@@ -1,5 +1,5 @@
-controlMenu = document.getElementById("controlMenu") // don't put var in front of this because it's already declared
-controlMenu_button = document.getElementById("controlMenu-button") // don't put var in front of this because it's already declared
+var controlMenu = document.getElementById("controlMenu")
+var controlMenu_button = document.getElementById("controlMenu-button")
 var volumeRange_input = document.getElementById("volumeRange-input")
 var volumeRange_icon = document.getElementById("volumeRange-icon")
 
