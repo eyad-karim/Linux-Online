@@ -6,14 +6,14 @@
     height: 500px;
     width: 800px;
     padding: 10px;
-    background-color: var(--transparent-white);
-    border-radius: 20px;
+    background-color: var(--background2-color);
+    border-radius: 15px;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
     display: flex;
     flex-direction: row;
     gap: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.6, 0.05, 0.15, 0.95);
     z-index: 200;
@@ -43,7 +43,7 @@
     user-select: none;
 }
 #startMenu > ul#allAppsList li:hover{
-    background-color: #fff;
+    background-color: var(--background1-color);
     transform: scale(105%);
 }
 #startMenu > ul#allAppsList li > img{

@@ -13,9 +13,8 @@
     left: 150%;
     min-width: 300px;
     max-width: 500px;
-    min-height: 100px;
     padding: 10px;
-    background-color: var(--transparent-white);
+    background-color: var(--background2-color);
     backdrop-filter: blur(50px);
     border-radius: 10px;
     display: flex;
@@ -41,4 +40,7 @@
 .toast > img {
     max-width: 20px;
     max-height: 20px;
+}
+body[theme="dark"] .toast img{
+    filter: invert(1);
 }

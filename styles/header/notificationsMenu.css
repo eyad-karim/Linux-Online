@@ -7,11 +7,11 @@
     /* area */
     width: 500px;
     /* style */
-    background-color: var(--transparent-white);
-    border-radius: 20px;
+    background-color: var(--background2-color);
+    border-radius: 15px;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     /* display */
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ff0000;
+    background-color: var(--red);
     color: #ffffff;
     border-radius: 50%;
     /* overflow: hidden; */
@@ -49,9 +49,9 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    background-color: #ffffff;
-    border-bottom: 1px solid #ccc;
+    align-items: center; 
+    background-color: var(--background1-color);
+    border-bottom: 1px solid var(--border-color);
     gap: 10px;
 }
 #notificationsMenu > div#notificationsMenu-head span{
@@ -88,5 +88,9 @@
     /* border-bottom: 1px solid #626262; */
 }
 #notificationsMenu #notificationsMenu-container > li:hover{
-    background-color: #ffffff;
+    background-color: var(--background1-color);
+}
+
+body[theme="dark"] #notificationsMenu img{
+    filter: invert(1);
 }

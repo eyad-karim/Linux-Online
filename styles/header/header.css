@@ -13,18 +13,18 @@ main > header{
 
 main > header > div{
     padding: 5px;
-    border-radius: 100px;
-    background-color: var(--transparent-white);
+    border-radius: 10px;
+    background-color: var(--background2-color);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
 }
 main > header > div > div{
     padding: 5px;
-    border-radius: 100px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@ main > header > div > div{
     transition-duration: 0.3s;
 }
 main > header > div > div:hover{
-    background-color: #ffffff;
+    background-color: var(--background1-color);
 }
 main > header > div > div:active{
     transform: scale(90%);
@@ -41,4 +41,8 @@ main > header > div > div:active{
 main > header > div img{
     max-width: 20px;
     max-height: 20px;
+}
+
+body[theme="dark"] main > header img{
+    filter: invert(1);
 }

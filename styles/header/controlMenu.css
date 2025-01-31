@@ -7,11 +7,11 @@
     /* area */
     width: 300px;
     /* style */
-    background-color: var(--transparent-white);
-    border-radius: 20px;
+    background-color: var(--background2-color);
+    border-radius: 15px;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     /* display */
     display: flex;
     flex-direction: column;
@@ -35,8 +35,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    border-bottom: 1px solid #ccc;
+    background-color: var(--background1-color);
+    border-bottom: 1px solid var(--border-color);
 }
 #controlMenu > div#controlMenu-head img{
     transition-duration: 0.3s;
@@ -60,13 +60,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 10px;
     transition-duration: 0.3s;
     gap: 10px;
 }
 #controlMenu > div#controlMenu-quickOptions > div:hover{
-    background-color: #ffffff;
+    background-color: var(--background1-color);
 }
 #controlMenu > div#controlMenu-quickOptions > div label{
     display: flex;
@@ -85,4 +85,8 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+body[theme="dark"] #controlMenu img{
+    filter: invert(1);
 }

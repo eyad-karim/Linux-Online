@@ -6,11 +6,11 @@
     min-height: 200px;
     overflow: hidden;
     /* style */
-    background-color: var(--transparent-white);
-    box-shadow: 0px 16px 20px -10px rgba(0, 0, 0, 0.25);
+    background-color: var(--background2-color);
+    box-shadow: 0px 16px 20px -10px var(--shadow-color);
     backdrop-filter: blur(20px);
     border-radius: 10px;
-    border: 1px solid #aaa;
+    border: 1px solid var(--border-color);
     display: flex;
     animation: launchAppWindow 0.3s ease-out;
 }
@@ -29,7 +29,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    /* background-color: var(--transparent-white); */
+    /* background-color: var(--background-color); */
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -46,7 +46,7 @@
     height: 25px;
 }
 .appWindow .appWindow-options span:hover{
-    background-color: #ffffff;
+    background-color: var(--primary);
 }
 
 .appWindow .appWindow-content{
@@ -56,7 +56,7 @@
 }
 
 .appWindow .appWindow-content header{
-    background-color: var(--transparent-white);
+    background-color: var(--background1-color);
     height: 35px;
     padding: 0 10px;
     display: flex;
@@ -68,6 +68,12 @@
     flex-grow: 1;
 }
 
+.appWindow .appWindow-tools div{
+    transition-duration: 0.3s;
+}
+.appWindow .appWindow-tools div:hover{
+    background-color: var(--primary);
+}
 .appWindow .appWindow-tools .appWindow-resize-x{
     height: 100%;
     width: 6px;
@@ -122,7 +128,7 @@
 }
 
 .appWindow .appWindow-footer{
-    background-color: var(--transparent-white);
+    background-color: var(--background1-color);
     padding: 0 10px;
     display: flex;
     flex-direction: row;
@@ -132,4 +138,8 @@
     font-family: monospace;
     font-weight: 300;
     font-size: 12px;
+}
+
+body[theme="dark"] .appWindow .appWindow-options span img{
+    filter: invert(1);
 }

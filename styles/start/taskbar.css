@@ -6,11 +6,11 @@
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 15px;
-    background-color: var(--transparent-white);
+    background-color: var(--background2-color);
     display: inline;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     z-index: 300;
 }
 #taskbar ul{
@@ -30,7 +30,7 @@
     transition-duration: 0.3s;
 }
 #taskbar ul li:hover{
-    background-color: #ffffff;
+    background-color: var(--background1-color);
     transform: scale(110%);
 }
 #taskbar ul li img{
