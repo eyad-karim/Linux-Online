@@ -1,19 +1,17 @@
 body[theme="dark"] {
     /* system background */
     --system-background-image: url("../images/wallpapers/leafs.jpg");
-    /* primary colors */
-    --primary: #28a745;
-    --background1-color: #313131;
-    --background2-color: #1f1f1f;
-    /* others */
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: #313335;
-    --text-color: #ffffff;
-    --blur: 50px;
     /* colors */
-    --red: #dc3545;
-    --green: #28a745;
-    --gray: #9fa7ad;
+    --primary: #0078D4;
+    --secondary: #00B4D8;
+    --disapled: #A6A6A6;
+    --backgrounds-color: rgba(30, 30, 30, 0.5);
+    --text-color: #ffffff;
+    /* effects */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgb(50, 50, 50, 0.5);
+    --primary-radius: 20px;
+    --blur: 10px;
 }
 body[theme="dark"] .toast img{
     filter: invert(1);

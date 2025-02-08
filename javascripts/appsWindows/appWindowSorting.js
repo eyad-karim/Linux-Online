@@ -2,7 +2,6 @@ var zIndexList = []
 
 function addSortingEventForAppWindow(appWindowID) {
     document.getElementById(appWindowID).addEventListener('mousedown',() => {
-        console.log("mousedown");
         sortInFront(document.getElementById(appWindowID))
     })
 }

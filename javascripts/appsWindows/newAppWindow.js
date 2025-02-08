@@ -26,10 +26,11 @@ function newAppWindow(appWindowName) {
     </header>
     <div class="appWindow-content">
         <header id="${div.id}-header">
+            <img src="images/logos/${appWindowName}.png" alt="appWindow">
             ${appWindowName}
         </header>
-        <div class="appWindow-body">
-            comming soon
+        <div id="${div.id}-body" class="appWindow-body">
+            body
         </div>
         <footer class="appWindow-footer">${div.id}</footer>
     </div>
@@ -56,6 +57,8 @@ function newAppWindow(appWindowName) {
     document.getElementById(`${div.id}-close`).addEventListener("click", () => {
         closeAppWindow(div)
     })
+
+    return div;
 }
 
 function closeAppWindow(appWindow) {

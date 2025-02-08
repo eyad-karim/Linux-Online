@@ -1,26 +1,27 @@
 main > header{
     position: fixed;
-    top: 5px;
-    left: 50%;
-    transform: translate(-50%,0);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     gap: 5px;
     user-select: none;
     z-index: 300;
+    background-color: var(--backgrounds-color);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
 }
 
 main > header > div{
     padding: 5px;
-    border-radius: 10px;
-    background-color: var(--background2-color);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid var(--border-color);
 }
 main > header > div > div{
     padding: 5px;
@@ -32,13 +33,13 @@ main > header > div > div{
     transition-duration: 0.3s;
 }
 main > header > div > div:hover{
-    background-color: var(--background1-color);
+    opacity: 0.5;
 }
 main > header > div > div:active{
     transform: scale(90%);
 }
 
 main > header > div img{
-    max-width: 20px;
-    max-height: 20px;
+    width: 20px;
+    height: 20px;
 }

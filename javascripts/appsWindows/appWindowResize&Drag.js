@@ -41,10 +41,7 @@ function dragElement(appWindow) {
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
-        appsWindows.forEach(appWindow => {
-            appWindow.classList.add("blur")
-        })
-        appWindow.classList.remove("blur")
+        
     }
 
     function elementDrag(e) {
@@ -55,7 +52,7 @@ function dragElement(appWindow) {
         posY = posOY - e.clientY;
         posOX = e.clientX;
         posOY = e.clientY;
-
+        
         appWindow.style.top = appWindow.offsetTop - posY + "px";
         appWindow.style.left = appWindow.offsetLeft - posX + "px";
     }
@@ -63,9 +60,6 @@ function dragElement(appWindow) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
-        appsWindows.forEach((appWindow) => {
-            appWindow.classList.remove("blur")
-        })
     }
 }
 

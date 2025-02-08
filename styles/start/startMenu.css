@@ -6,10 +6,10 @@
     height: 500px;
     width: 800px;
     padding: 10px;
-    background-color: var(--background2-color);
+    background-color: var(--backgrounds-color);
     border-radius: 15px;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -22,6 +22,9 @@
     bottom: 80px;
 }
 #startMenu > ul#allAppsList {
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     width: 300px;
     list-style-type: none;
     padding: 10px;
@@ -41,10 +44,12 @@
     padding: 10px;
     transition-duration: 0.4s;
     user-select: none;
+    border: 1px solid transparent;
 }
 #startMenu > ul#allAppsList li:hover{
-    background-color: var(--background1-color);
-    transform: scale(105%);
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
+    /* transform: scale(105%); */
 }
 #startMenu > ul#allAppsList li > img{
     max-width: 30px;

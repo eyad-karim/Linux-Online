@@ -1,17 +1,15 @@
 body[theme="light"] {
     /* system background */
     --system-background-image: url("../images/wallpapers/sunflowers.jpg");
-    /* primary colors */
-    --primary: #28a745;
-    --background1-color: #ffffff;
-    --background2-color: #e6e6e6cc;
-    /* others */
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: #B3B9C4;
-    --text-color: #212529;
-    --blur: 50px;
     /* colors */
-    --red: #dc3545;
-    --green: #28a745;
-    --gray: #6c757d;
+    --primary: #0078D4;
+    --secondary: #00B4D8;
+    --disapled: #A6A6A6;
+    --backgrounds-color: rgba(240, 242, 245, 0.502);
+    --text-color: #333333;
+    /* effects */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(205, 205, 205, 0.5);
+    --primary-radius: 20px;
+    --blur: 10px;
 }

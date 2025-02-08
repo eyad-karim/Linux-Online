@@ -2,15 +2,14 @@
     /* position */
     position: fixed;
     top: -100vh;
-    left: 50%;
-    transform: translate(-50%, 0);
+    left: 5px;
     /* area */
     width: 500px;
     /* style */
-    background-color: var(--background2-color);
+    background-color: var(--backgrounds-color);
     border-radius: 15px;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--border-color);
     /* display */
     display: flex;
@@ -24,18 +23,20 @@
     user-select: none;
     z-index: 201;
 }
-
+#notificationsMenu-button{
+    position: relative;
+}
 #notificationsMenu-button.unread::before{
     content: attr(data-unread);
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: 0px;
+    right: 0px;
     width: 20px;
     height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--red);
+    background-color: var(--primary);
     color: #ffffff;
     border-radius: 50%;
     /* overflow: hidden; */
@@ -49,9 +50,10 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center; 
-    background-color: var(--background1-color);
-    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+    margin: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     gap: 10px;
 }
 #notificationsMenu > div#notificationsMenu-head span{
@@ -85,8 +87,9 @@
     border-radius: 10px;
     transition-duration: 0.3s;
     align-items: center;
-    /* border-bottom: 1px solid #626262; */
+    border: 1px solid transparent;
 }
 #notificationsMenu #notificationsMenu-container > li:hover{
-    background-color: var(--background1-color);
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
 }

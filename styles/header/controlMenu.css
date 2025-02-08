@@ -2,15 +2,14 @@
     /* position */
     position: fixed;
     top: -100vh;
-    left: 50%;
-    transform: translate(-50%, 0);
+    right: 5px;
     /* area */
     width: 300px;
     /* style */
-    background-color: var(--background2-color);
+    background-color: var(--backgrounds-color);
     border-radius: 15px;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--border-color);
     /* display */
     display: flex;
@@ -35,8 +34,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background1-color);
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin: 10px;
 }
 #controlMenu > div#controlMenu-head img{
     transition-duration: 0.3s;
@@ -64,9 +64,6 @@
     padding: 10px;
     transition-duration: 0.3s;
     gap: 10px;
-}
-#controlMenu > div#controlMenu-quickOptions > div:hover{
-    background-color: var(--background1-color);
 }
 #controlMenu > div#controlMenu-quickOptions > div label{
     display: flex;

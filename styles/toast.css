@@ -13,12 +13,13 @@
     left: 150%;
     min-width: 300px;
     max-width: 500px;
-    padding: 10px;
-    background-color: var(--background2-color);
-    backdrop-filter: blur(50px);
+    padding: 15px;
+    background-color: var(--backgrounds-color);
+    backdrop-filter: blur(var(--blur));
     border-radius: 10px;
+    border: 1px solid var(--border-color);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
     z-index: 200;
     animation: toast 3s;
@@ -38,6 +39,6 @@
     }
 }
 .toast > img {
-    max-width: 20px;
-    max-height: 20px;
+    width: 30px;
+    height: 30px;
 }

@@ -3,6 +3,7 @@ var controlMenu_button = document.getElementById("controlMenu-button")
 var volumeRange_input = document.getElementById("volumeRange-input")
 var volumeRange_icon = document.getElementById("volumeRange-icon")
 
+// volume range icon
 function checkTheVolumeRange() {
     if (volumeRange_input.value >= 66 ) {
         return "volume_up"
@@ -17,7 +18,7 @@ volumeRange_input.addEventListener("mousemove",() => {
     volumeRange_icon.setAttribute("src",`./images/icons/${checkTheVolumeRange()}.svg`)
 })
 
-
+// wifi icon
 var wifiToggle_button = document.getElementById("wifiToggle-button");
 var wifi_icon = document.getElementById("wifi-icon");
 
@@ -29,6 +30,7 @@ wifiToggle_button.addEventListener("change", () => {
     }
 });
 
+// bluetooth icon
 var bluetoothToggle_button = document.getElementById("bluetoothToggle-button");
 var bluetooth_icon = document.getElementById("bluetooth-icon");
 
@@ -39,3 +41,13 @@ bluetoothToggle_button.addEventListener("change", () => {
         bluetooth_icon.setAttribute("src", "./images/icons/bluetooth_off.svg");
     }
 });
+
+// ligth/dark mode icon
+var themeToggle_button = document.getElementById("themeToggle-button");
+themeToggle_button.addEventListener("click", () => {
+    if (themeToggle_button.checked) {
+        document.body.setAttribute("theme", "dark");
+    } else {
+        document.body.setAttribute("theme", "light");
+    }
+})

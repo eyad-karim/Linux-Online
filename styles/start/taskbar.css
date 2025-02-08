@@ -6,10 +6,10 @@
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 15px;
-    background-color: var(--background2-color);
+    background-color: var(--backgrounds-color);
     display: inline;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--border-color);
     z-index: 300;
 }
@@ -22,16 +22,16 @@
 #taskbar ul li{
     width: 50px;
     height: 50px;
-    margin: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     transition-duration: 0.3s;
+    border: 1px solid transparent;
 }
 #taskbar ul li:hover{
-    background-color: var(--background1-color);
-    transform: scale(110%);
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
 }
 #taskbar ul li img{
     max-width: 34px;

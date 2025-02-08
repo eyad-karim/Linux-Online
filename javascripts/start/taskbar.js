@@ -23,9 +23,6 @@ function addTaskbar_app(appName, appIcon) {
     app.innerHTML = `<img src="./images/logos/${appIcon}" alt="${appName}" draggable="false">`
     taskbar_apps_ul.appendChild(app)
     taskbar_apps_list.push({appName, appIcon})
-    app.addEventListener("click", () => {
-        newAppWindow(appName)
-    })
 }
 
 taskbar_apps_list.forEach(app => {
