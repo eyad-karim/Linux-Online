@@ -1,7 +1,7 @@
 .appWindow{
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 10%;
+    left: 10%;
     min-width: 200px;
     min-height: 200px;
     overflow: hidden;
@@ -53,6 +53,9 @@
     display: flex;
     flex-direction: column;
 }
+.appWindow .appWindow-content .appWindow-body{
+    overflow: hidden;
+}
 /* *********************************************************** */
 .appWindow .appWindow-content header{
     background-color: var(--backgrounds-color);
@@ -63,6 +66,8 @@
     align-items: center;
     user-select: none;
     backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border-bottom: 1px solid var(--border-color);
 }
 
 .appWindow .appWindow-content header img{
@@ -153,4 +158,5 @@
     font-family: monospace;
     font-weight: 300;
     font-size: 12px;
+    border-top: 1px solid var(--border-color);
 }

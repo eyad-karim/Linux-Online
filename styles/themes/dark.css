@@ -9,7 +9,7 @@ body[theme="dark"] {
     --text-color: #ffffff;
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: rgb(50, 50, 50, 0.5);
+    --border-color: rgba(91, 91, 91, 0.5);
     --primary-radius: 20px;
     --blur: 10px;
 }

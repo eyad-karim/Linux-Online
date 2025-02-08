@@ -1,0 +1,97 @@
+.Settings-appWindow-style .appWindow-content .appWindow-body{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu{
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    list-style-type: none;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu h2{
+    color: var(--primary);
+    font-size: 1.5em;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu li{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu li:hover{
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
+}
+
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content{
+    border-radius: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+}
+
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content h2{
+    color: var(--primary);
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content .settings-section{
+    height: 100%;
+}
+
+label + input[type="file"]{
+    display: none;
+}
+label[for="system-background-image-input"] {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--backgrounds-color);
+    color: var(--primary);
+    transition: 0.3s;
+}
+label[for="system-background-image-input"]:hover {
+    background-color: var(--primary);
+    color: var(--text-color);
+}
+.cards-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.cards-row .card{
+    background-color: var(--backgrounds-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}

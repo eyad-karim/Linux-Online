@@ -15,8 +15,9 @@ function newAppWindow(appWindowName) {
     appsWindowsList.push(div.id) // add appWindow to the list
     
     div.classList.add("appWindow") // add appWindow class
-    div.style.width = "800px"
-    div.style.height = "500px"
+    div.classList.add(`${appWindowName}-appWindow-style`) // add appWindow class
+    div.style.width = "1200px"
+    div.style.height = "800px"
 
     div.innerHTML = `
     <header class="appWindow-options">
