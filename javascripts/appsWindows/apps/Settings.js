@@ -27,15 +27,22 @@ function openSettings() {
             <div style="display:none;" class="settings-section" id="personalization-${TheApp.id}-section">
                 <h2>Personalization</h2>
                 <h3>Background</h3>
-                <div class="cards-row">
+                <div class="cards-column">
                     <div class="card">
-                        <label for="system-background-color-input">Choose a color</label>
-                        <input type="color" id="system-background-color-input">
+                        Choose Your solid color background
+                        <label class="input-type-color" for="system-background-color-input-${TheApp.id}">Choose a color</label>
+                        <input type="color" id="system-background-color-input-${TheApp.id}">
                     </div>
-                    Or
                     <div class="card">
-                        <label for="system-background-image-input">Choose a background</label>
-                        <input type="file" id="system-background-image-input" accept="image/*">
+                        Choose Your own background
+                        <label class="input-type-file" for="system-background-image-input-${TheApp.id}">Choose a background</label>
+                        <input type="file" id="system-background-image-input-${TheApp.id}" accept="image/*">
+                        Last backgrounds
+                        <div id="${TheApp.id}-lastBackgrounds" class="cards-row lastBackgrounds">
+                        </div>
+                    </div>
+                    <div class="card">
+                        Create your own theme
                     </div>
                 </div>
             </div>
@@ -81,18 +88,39 @@ function openSettings() {
         })
     })
     // Background
-    var system_background_file_input = document.getElementById("system-background-image-input")
+
+    var system_background_file_input = document.getElementById(`system-background-image-input-${TheApp.id}`)
     system_background_file_input.addEventListener("change", () => {
         var file = system_background_file_input.files[0]        
         var reader = new FileReader()
         reader.onload = function(e) {
-            document.body.style.backgroundImage = `url(${e.target.result})`
-            console.log(e.target.result);
-            
+            document.body.style.backgroundImage = `url(${e.target.result})`;
+            addNewLastBackground(e.target.result)
         }
         reader.readAsDataURL(file)
     })
-    var system_background_color_input = document.getElementById("system-background-color-input")
+
+    function addNewLastBackground(backgroundPath) {
+        var container = document.getElementById(`${TheApp.id}-lastBackgrounds`)
+        var card = document.createElement("div")
+        card.classList.add("card")
+        card.style.background = `url('${backgroundPath}') no-repeat center center`
+        card.style.backgroundSize = "cover"
+        card.style.width = "150px"
+        card.style.height = "100px"
+        container.appendChild(card)
+        card.addEventListener("click",()=>{
+            document.body.style.background = `url('${backgroundPath}') no-repeat center center`
+            document.body.style.backgroundSize = "cover"
+        })
+    }
+    
+    addNewLastBackground("./images/wallpapers/sunflowers.jpg")
+    addNewLastBackground("./images/wallpapers/leafs.jpg")
+    addNewLastBackground("./images/wallpapers/redtrees.jpg")
+    addNewLastBackground("./images/wallpapers/trainroad.jpg")
+
+    var system_background_color_input = document.getElementById(`system-background-color-input-${TheApp.id}`)
     system_background_color_input.addEventListener("change", () => {
         document.body.style.backgroundImage = `url(bta3)`
         document.body.style.backgroundColor = system_background_color_input.value;
