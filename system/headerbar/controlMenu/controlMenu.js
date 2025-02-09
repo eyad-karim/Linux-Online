@@ -15,7 +15,7 @@ function checkTheVolumeRange() {
 }
 
 volumeRange_input.addEventListener("mousemove",() => {
-    volumeRange_icon.setAttribute("src",`./images/icons/${checkTheVolumeRange()}.svg`)
+    volumeRange_icon.setAttribute("src",`./assets/system-icons/${checkTheVolumeRange()}.svg`)
 })
 
 // wifi icon
@@ -24,9 +24,9 @@ var wifi_icon = document.getElementById("wifi-icon");
 
 wifiToggle_button.addEventListener("change", () => {
     if (wifiToggle_button.checked) {
-        wifi_icon.setAttribute("src", "./images/icons/wifi.svg");
+        wifi_icon.setAttribute("src", "./assets/system-icons/wifi.svg");
     } else {
-        wifi_icon.setAttribute("src", "./images/icons/wifi_off.svg");
+        wifi_icon.setAttribute("src", "./assets/system-icons/wifi_off.svg");
     }
 });
 
@@ -36,9 +36,9 @@ var bluetooth_icon = document.getElementById("bluetooth-icon");
 
 bluetoothToggle_button.addEventListener("change", () => {
     if (bluetoothToggle_button.checked) {
-        bluetooth_icon.setAttribute("src", "./images/icons/bluetooth.svg");
+        bluetooth_icon.setAttribute("src", "./assets/system-icons/bluetooth.svg");
     } else {
-        bluetooth_icon.setAttribute("src", "./images/icons/bluetooth_off.svg");
+        bluetooth_icon.setAttribute("src", "./assets/system-icons/bluetooth_off.svg");
     }
 });
 

@@ -1,6 +1,6 @@
 body[theme="light"] {
     /* system background */
-    --system-background-image: url("../images/wallpapers/sunflowers.jpg");
+    --system-background-image: url(" ../assets/system-wallpapers/sunflowers.jpg");
     /* colors */
     --primary: #0078D4;
     --secondary: #00B4D8;
@@ -9,7 +9,7 @@ body[theme="light"] {
     --text-color: #333333;
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: rgb(127 127 127 / 0.5);
+    --border-color: rgba(127, 127, 127, 0.5);
     --primary-radius: 20px;
     --blur: 10px;
 }

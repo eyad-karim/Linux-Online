@@ -1,13 +1,16 @@
 main > header{
+    /* position */
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     margin: 5px;
+    /* content */
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     gap: 5px;
+    /* style */
     user-select: none;
     z-index: 300;
     background-color: var(--backgrounds-color);

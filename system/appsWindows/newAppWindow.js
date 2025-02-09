@@ -21,13 +21,13 @@ function newAppWindow(appWindowName) {
 
     div.innerHTML = `
     <header class="appWindow-options">
-        <span id="${div.id}-close"><img src="images/icons/close.svg" alt="close"></span>
-        <span id="${div.id}-fullscreenToggle"><img src="images/icons/open_fullscreen.svg" alt="open_fullscreen"></span>
-        <span id="${div.id}-minimize"><img src="images/icons/minimize.svg" alt="minimize"></span>
+        <span id="${div.id}-close"><img src="assets/system-icons/close.svg" alt="close"></span>
+        <span id="${div.id}-fullscreenToggle"><img src="assets/system-icons/open_fullscreen.svg" alt="open_fullscreen"></span>
+        <span id="${div.id}-minimize"><img src="assets/system-icons/minimize.svg" alt="minimize"></span>
     </header>
     <div class="appWindow-content">
         <header id="${div.id}-header">
-            <img src="images/logos/${appWindowName}.png" alt="appWindow">
+            <img src="assets/apps-logos/${appWindowName}.png" alt="appWindow">
             ${appWindowName}
         </header>
         <div id="${div.id}-body" class="appWindow-body">

@@ -1,6 +1,6 @@
 body[theme="dark"] {
     /* system background */
-    --system-background-image: url("../images/wallpapers/leafs.jpg");
+    --system-background-image: url("../assets/system-wallpapers/leafs.jpg");
     /* colors */
     --primary: #0078D4;
     --secondary: #00B4D8;

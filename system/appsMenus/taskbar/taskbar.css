@@ -1,17 +1,19 @@
 #taskbar{
+    /* position */
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translate(-50%,0);
-    padding: 5px;
     margin-bottom: 5px;
+    /* style */
+    padding: 5px;
     border-radius: 15px;
     background-color: var(--backgrounds-color);
-    display: inline;
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--border-color);
     z-index: 300;
+    display: inline;
 }
 #taskbar ul{
     display: flex;
@@ -20,14 +22,17 @@
     gap: 5px;
 }
 #taskbar ul li{
+    /* aria */
     width: 50px;
     height: 50px;
+    /* content */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    /* style */
     transition-duration: 0.3s;
     border: 1px solid transparent;
+    border-radius: 10px;
 }
 #taskbar ul li:hover{
     background-color: var(--backgrounds-color);

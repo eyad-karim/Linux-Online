@@ -29,7 +29,7 @@ function displayNotification(notificationData) {
     var notification = document.createElement("li")
     notification.id = `notification-${notificationData.id}`
     notification.classList.add("notification")
-    notification.innerHTML = `<img src="./images/icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
+    notification.innerHTML = `<img src="assets/system-icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
     notifications_container.appendChild(notification)
     notifications = document.querySelectorAll(".notification")
     updateDeleteListeners()

@@ -20,7 +20,7 @@ function addTaskbar_app(appName, appIcon) {
     var app = document.createElement("li")
     app.id = `${appName}-taskbarOpenButton`
     app.classList.add("taskbar-app")
-    app.innerHTML = `<img src="./images/logos/${appIcon}" alt="${appName}" draggable="false">`
+    app.innerHTML = `<img src="./assets/apps-logos/${appIcon}" alt="${appName}" draggable="false">`
     taskbar_apps_ul.appendChild(app)
     taskbar_apps_list.push({appName, appIcon})
 }

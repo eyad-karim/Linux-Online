@@ -115,10 +115,10 @@ function openSettings() {
         })
     }
     
-    addNewLastBackground("./images/wallpapers/sunflowers.jpg")
-    addNewLastBackground("./images/wallpapers/leafs.jpg")
-    addNewLastBackground("./images/wallpapers/redtrees.jpg")
-    addNewLastBackground("./images/wallpapers/trainroad.jpg")
+    addNewLastBackground("./assets/system-wallpapers/sunflowers.jpg")
+    addNewLastBackground("./assets/system-wallpapers/leafs.jpg")
+    addNewLastBackground("./assets/system-wallpapers/redtrees.jpg")
+    addNewLastBackground("./assets/system-wallpapers/trainroad.jpg")
 
     var system_background_color_input = document.getElementById(`system-background-color-input-${TheApp.id}`)
     system_background_color_input.addEventListener("change", () => {
