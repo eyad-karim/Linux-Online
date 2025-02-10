@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
-    z-index: 200;
     animation: toast 3s;
 }
 @keyframes toast {

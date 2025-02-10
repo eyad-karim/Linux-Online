@@ -16,7 +16,7 @@ function sortInFront(appWindow) {
     zIndexList = newZIndexList;
     for(i=0;i<zIndexList.length;i++){
         var appWindow = document.getElementById(zIndexList[i]);
-        appWindow.style.zIndex = 100 + (zIndexList.length - i);
+        appWindow.style.zIndex = 200 + (zIndexList.length - i);
     }
     console.log(zIndexList);
 }

@@ -12,7 +12,7 @@
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
     border: 1px solid var(--border-color);
-    z-index: 300;
+    z-index: 400;
     display: inline;
 }
 #taskbar ul{

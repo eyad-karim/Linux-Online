@@ -12,7 +12,7 @@ main > header{
     gap: 5px;
     /* style */
     user-select: none;
-    z-index: 300;
+    z-index: 400;
     background-color: var(--backgrounds-color);
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));

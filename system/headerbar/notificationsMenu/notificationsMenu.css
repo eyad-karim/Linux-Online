@@ -21,7 +21,7 @@
     /* others */
     overflow: hidden;
     user-select: none;
-    z-index: 201;
+    z-index: 301;
 }
 #notificationsMenu-button{
     position: relative;
