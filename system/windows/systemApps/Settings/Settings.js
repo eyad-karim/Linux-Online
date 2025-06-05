@@ -2,9 +2,12 @@ var Settings_taskbarOpenButton = document.getElementById("Settings-taskbarOpenBu
 Settings_taskbarOpenButton.addEventListener("click", () => {
     openSettings()
 })
-openSettings()
+var lastBackgroundsList = ["assets/system-wallpapers/sunflowers.jpg","assets/system-wallpapers/leafs.jpg","assets/system-wallpapers/redtrees.jpg","assets/system-wallpapers/trainroad.jpg"]
+// openSettings()
+
+
 function openSettings() {
-    var TheApp = newAppWindow("Settings")
+    var TheApp = newwindow("Settings")
     document.getElementById(`${TheApp.id}-body`).innerHTML = `
         <ul class="Settings-menu">
             <h2>Set things</h2>
@@ -19,30 +22,50 @@ function openSettings() {
             <li class="settings-section-button" id="updateandsecurity-${TheApp.id}-section-button">Update & Security</li>
         </ul>
         <div class="Settings-content">
-            <h1 style="text-align:center;">Set things up</h1>
+            <h1 style="text-align:center;">Set things</h1>
             <div style="display:none;" class="settings-section" id="system-${TheApp.id}-section">
                 <h2>System</h2>
                 <p>Here you can change your system settings</p>
             </div>
             <div style="display:none;" class="settings-section" id="personalization-${TheApp.id}-section">
                 <h2>Personalization</h2>
-                <h3>Background</h3>
                 <div class="cards-column">
+                    <h3>Background</h3>
                     <div class="card">
-                        Choose Your solid color background
-                        <label class="input-type-color" for="system-background-color-input-${TheApp.id}">Choose a color</label>
-                        <input type="color" id="system-background-color-input-${TheApp.id}">
-                    </div>
-                    <div class="card">
-                        Choose Your own background
-                        <label class="input-type-file" for="system-background-image-input-${TheApp.id}">Choose a background</label>
-                        <input type="file" id="system-background-image-input-${TheApp.id}" accept="image/*">
-                        Last backgrounds
+                        <header>
+                            Choose Your own background
+                            <div style="flex-grow:1"></div>
+                            <label class="input-type-file" for="system-background-image-input-${TheApp.id}">Upload a background</label>
+                            <input type="file" id="system-background-image-input-${TheApp.id}" accept="image/*">
+                            <label class="input-type-color" for="system-background-color-input-${TheApp.id}">Choose a solid color</label>
+                            <input type="color" id="system-background-color-input-${TheApp.id}">
+                        </header>
                         <div id="${TheApp.id}-lastBackgrounds" class="cards-row lastBackgrounds">
                         </div>
                     </div>
+                </div>
+                <hr>
+                <h3>Themes</h3>
+                <div class="cards-column">
                     <div class="card">
-                        Create your own theme
+                        <header>Choose a theme</header>
+                        <div class="cards-row" style="justify-content:space-between;flex-wrap:wrap">
+                            <label for="themeToggle-button-${TheApp.id}" style="display: flex;flex-direction:row;align-items:center;gap:10px">
+                                <img src="./assets/system-icons/mode.svg" alt="svg icon">
+                                <span>Light/Dark mode</span>
+                            </label>
+                            <input type="checkbox" checked id="themeToggle-button-${TheApp.id}" class="toggle-input">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <header>Create Your Theme</header>
+                        <div class="cards-row" style="justify-content:space-between;padding:10px 0">
+                            Primary Color:
+                            <div>
+                                <label class="input-type-color" for="system-theme-primary-color-input-${TheApp.id}">Choose a color</label>
+                                <input type="color" id="system-theme-primary-color-input-${TheApp.id}">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,15 +103,15 @@ function openSettings() {
     document.querySelectorAll(".settings-section-button").forEach((button) => {
         button.addEventListener("click", () => {
             
-            var sectionsSelector = `#${button.id.split("-")[1] + "-appWindow"} .settings-section`;
+            var sectionsSelector = `#${button.id.split("-")[1] + "-window"} .settings-section`;
             document.querySelectorAll(`${sectionsSelector}`).forEach((section) => {
                 section.style.display = "none"
             })
-            document.getElementById(button.id.replace("-button", "")).style.display = "block"
+            document.getElementById(button.id.replace("-button", "")).style.display = "flex"
         })
     })
-    // Background
-
+    
+    // Background settings
     var system_background_file_input = document.getElementById(`system-background-image-input-${TheApp.id}`)
     system_background_file_input.addEventListener("change", () => {
         var file = system_background_file_input.files[0]        
@@ -96,6 +119,7 @@ function openSettings() {
         reader.onload = function(e) {
             document.body.style.backgroundImage = `url(${e.target.result})`;
             addNewLastBackground(e.target.result)
+            lastBackgroundsList.push(e.target.result)
         }
         reader.readAsDataURL(file)
     })
@@ -114,15 +138,30 @@ function openSettings() {
             document.body.style.backgroundSize = "cover"
         })
     }
+    lastBackgroundsList.forEach(background => {
+        addNewLastBackground(background)
+    })
     
-    addNewLastBackground("./assets/system-wallpapers/sunflowers.jpg")
-    addNewLastBackground("./assets/system-wallpapers/leafs.jpg")
-    addNewLastBackground("./assets/system-wallpapers/redtrees.jpg")
-    addNewLastBackground("./assets/system-wallpapers/trainroad.jpg")
 
     var system_background_color_input = document.getElementById(`system-background-color-input-${TheApp.id}`)
-    system_background_color_input.addEventListener("change", () => {
+    system_background_color_input.addEventListener("input", () => {
         document.body.style.backgroundImage = `url(bta3)`
         document.body.style.backgroundColor = system_background_color_input.value;
+    })
+
+    // Themes
+    var themeToggle_button = document.getElementById("themeToggle-button-"+TheApp.id);
+    themeToggle_button.addEventListener("click", () => {
+        if (themeToggle_button.checked) {
+            document.body.setAttribute("theme", "dark");
+        } else {
+            document.body.setAttribute("theme", "light");
+        }
+    })
+
+    //Custom Theme
+    var system_theme_primary_color_input = document.getElementById(`system-theme-primary-color-input-${TheApp.id}`)
+    system_theme_primary_color_input.addEventListener("input", () => {
+        document.body.style.setProperty("--primary", system_theme_primary_color_input.value);
     })
 }

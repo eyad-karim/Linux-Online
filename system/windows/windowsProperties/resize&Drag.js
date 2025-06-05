@@ -1,34 +1,34 @@
-appsWindows = document.querySelectorAll(".appWindow")
+appsWindows = document.querySelectorAll(".window")
 
-appsWindows.forEach(appWindow => {
-    applyResizeAndDrag(appWindow)
+appsWindows.forEach(window => {
+    applyResizeAndDrag(window)
 })
 
-function applyResizeAndDrag(appWindow) {
-    dragElement(appWindow)
+function applyResizeAndDrag(window) {
+    dragElement(window)
     
     // x resize
-    rightResizeElement(appWindow)
-    leftResizeElement(appWindow)
+    rightResizeElement(window)
+    leftResizeElement(window)
     // y resize
-    bottomResizeElement(appWindow)
-    topResizeElement(appWindow)
+    bottomResizeElement(window)
+    topResizeElement(window)
     // corners resize
-    bottomRightResizeElement(appWindow)
-    bottomLeftResizeElement(appWindow)
-    topLeftResizeElement(appWindow)
-    topRightResizeElement(appWindow)
+    bottomRightResizeElement(window)
+    bottomLeftResizeElement(window)
+    topLeftResizeElement(window)
+    topRightResizeElement(window)
 }
 
-function dragElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function dragElement(window) {
+    var windowName = window.id.split("-")[0]
 
     var posX = 0,
         posY = 0,
         posOX = 0,
         posOY = 0;
 
-    document.getElementById(appWindowName + "-appWindow-header").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-header").onmousedown = dragMouseDown;
     
 
 
@@ -53,8 +53,8 @@ function dragElement(appWindow) {
         posOX = e.clientX;
         posOY = e.clientY;
         
-        appWindow.style.top = appWindow.offsetTop - posY + "px";
-        appWindow.style.left = appWindow.offsetLeft - posX + "px";
+        window.style.top = window.offsetTop - posY + "px";
+        window.style.left = window.offsetLeft - posX + "px";
     }
 
     function closeDragElement() {
@@ -64,12 +64,12 @@ function dragElement(appWindow) {
 }
 
 
-function rightResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function rightResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posX = 0,
         posOX = 0,
-        width = appWindow.style.width.split("px")[0];
-    document.getElementById(appWindowName + "-appWindow-resize-right").onmousedown = dragMouseDown;
+        width = window.style.width.split("px")[0];
+    document.getElementById(windowName + "-window-resize-right").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -77,7 +77,7 @@ function rightResizeElement(appWindow) {
         e.preventDefault();
 
         posOX = e.clientX;
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -90,7 +90,7 @@ function rightResizeElement(appWindow) {
         posX = posOX - e.clientX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
     }
 
     function closeDragElement() {
@@ -99,19 +99,19 @@ function rightResizeElement(appWindow) {
     }
 }
 
-function leftResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function leftResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posX = 0,
         posOX = 0,
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-left").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-left").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         posOX = e.clientX;
         document.onmouseup = closeDragElement;
 
@@ -125,9 +125,9 @@ function leftResizeElement(appWindow) {
         posX = e.clientX - posOX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
         if (width + posX > 200) {
-            appWindow.style.left = appWindow.offsetLeft + posX + "px";
+            window.style.left = window.offsetLeft + posX + "px";
         }
     }
 
@@ -137,13 +137,13 @@ function leftResizeElement(appWindow) {
     }
 }
 
-function bottomResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function bottomResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-bottom").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-bottom").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -151,7 +151,7 @@ function bottomResizeElement(appWindow) {
         e.preventDefault();
 
         posOY = e.clientY;
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -164,7 +164,7 @@ function bottomResizeElement(appWindow) {
         posY = posOY - e.clientY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
     }
 
     function closeDragElement() {
@@ -173,19 +173,19 @@ function bottomResizeElement(appWindow) {
     }
 }
 
-function topResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function topResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-top").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-top").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         posOY = e.clientY;
         document.onmouseup = closeDragElement;
 
@@ -199,9 +199,9 @@ function topResizeElement(appWindow) {
         posY = e.clientY - posOY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
         if (height + posY > 200) {
-            appWindow.style.top = appWindow.offsetTop + posY + "px";
+            window.style.top = window.offsetTop + posY + "px";
         }
     }
 
@@ -211,16 +211,16 @@ function topResizeElement(appWindow) {
     }
 }
 
-function bottomRightResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function bottomRightResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
         posOX = 0,
-        height = appWindow.style.height.split("px")[0],
-        width = appWindow.style.width.split("px")[0];
+        height = window.style.height.split("px")[0],
+        width = window.style.width.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-bottom-right").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-bottom-right").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -228,9 +228,9 @@ function bottomRightResizeElement(appWindow) {
         e.preventDefault();
 
         posOY = e.clientY;
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         posOX = e.clientX;
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -243,11 +243,11 @@ function bottomRightResizeElement(appWindow) {
         posY = posOY - e.clientY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
         posX = posOX - e.clientX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
     }
 
     function closeDragElement() {
@@ -256,16 +256,16 @@ function bottomRightResizeElement(appWindow) {
     }
 }
 
-function bottomLeftResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function bottomLeftResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
         posOX = 0,
-        height = appWindow.style.height.split("px")[0],
-        width = appWindow.style.width.split("px")[0];
+        height = window.style.height.split("px")[0],
+        width = window.style.width.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-bottom-left").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-bottom-left").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -273,9 +273,9 @@ function bottomLeftResizeElement(appWindow) {
         e.preventDefault();
 
         posOY = e.clientY;
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         posOX = e.clientX;
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -288,13 +288,13 @@ function bottomLeftResizeElement(appWindow) {
         posY = posOY - e.clientY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
         posX = e.clientX - posOX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
         if (width + posX > 200) {
-            appWindow.style.left = appWindow.offsetLeft + posX + "px";
+            window.style.left = window.offsetLeft + posX + "px";
         }
     }
 
@@ -304,16 +304,16 @@ function bottomLeftResizeElement(appWindow) {
     }
 }
 
-function topRightResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function topRightResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
         posOX = 0,
-        height = appWindow.style.height.split("px")[0],
-        width = appWindow.style.width.split("px")[0];
+        height = window.style.height.split("px")[0],
+        width = window.style.width.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-top-right").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-top-right").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -321,9 +321,9 @@ function topRightResizeElement(appWindow) {
         e.preventDefault();
 
         posOY = e.clientY;
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         posOX = e.clientX;
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -335,14 +335,14 @@ function topRightResizeElement(appWindow) {
         posY = e.clientY - posOY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
         if (height + posY > 200) {
-            appWindow.style.top = appWindow.offsetTop + posY + "px";
+            window.style.top = window.offsetTop + posY + "px";
         }
         posX = posOX - e.clientX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
     }
 
     function closeDragElement() {
@@ -351,16 +351,16 @@ function topRightResizeElement(appWindow) {
     }
 }
 
-function topLeftResizeElement(appWindow) {
-    var appWindowName = appWindow.id.split("-")[0]
+function topLeftResizeElement(window) {
+    var windowName = window.id.split("-")[0]
     var posY = 0,
         posOY = 0,
         posX = 0,
         posOX = 0,
-        height = appWindow.style.height.split("px")[0],
-        width = appWindow.style.width.split("px")[0];
+        height = window.style.height.split("px")[0],
+        width = window.style.width.split("px")[0];
 
-    document.getElementById(appWindowName + "-appWindow-resize-top-left").onmousedown = dragMouseDown;
+    document.getElementById(windowName + "-window-resize-top-left").onmousedown = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -368,9 +368,9 @@ function topLeftResizeElement(appWindow) {
         e.preventDefault();
 
         posOY = e.clientY;
-        height = appWindow.style.height.split("px")[0];
+        height = window.style.height.split("px")[0];
         posOX = e.clientX;
-        width = appWindow.style.width.split("px")[0];
+        width = window.style.width.split("px")[0];
         document.onmouseup = closeDragElement;
 
         document.onmousemove = elementDrag;
@@ -382,16 +382,16 @@ function topLeftResizeElement(appWindow) {
         posY = e.clientY - posOY;
         posOY = e.clientY;
         height = height - posY;
-        appWindow.style.height = height + "px";
+        window.style.height = height + "px";
         if (height + posY > 200) {
-            appWindow.style.top = appWindow.offsetTop + posY + "px";
+            window.style.top = window.offsetTop + posY + "px";
         }
         posX = e.clientX - posOX;
         posOX = e.clientX;
         width = width - posX;
-        appWindow.style.width = width + "px";
+        window.style.width = width + "px";
         if (width + posX > 200) {
-            appWindow.style.left = appWindow.offsetLeft + posX + "px";
+            window.style.left = window.offsetLeft + posX + "px";
         }
     }
 

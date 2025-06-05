@@ -4,7 +4,7 @@ Www_taskbarOpenButton.addEventListener("click", () => {
 })
 
 function openWww() {
-    var Www = newAppWindow("Www")
+    var Www = newwindow("Www")
     document.getElementById(`${Www.id}-body`).innerHTML = `
         <iframe src="https://lichess.org/analysis" style="width: 100%; height: 100%; border: none;"></iframe>
     `

@@ -1,0 +1,86 @@
+#taskbar{
+    /* position */
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-bottom: 5px;
+    /* style */
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--main-background-color);
+    border: 1px solid var(--main-border-color);
+    z-index: 400;
+    display: inline-flex;
+    /* flexbox */
+    flex-direction: row;
+    gap: 5px;
+}
+#taskbar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 5px;
+}
+#taskbar ul li{
+    /* aria */
+    width: 40px;
+    height: 40px;
+    /* content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* style */
+    transition-duration: 0.3s;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+#taskbar ul li:hover{
+    background-color: var(--second-background-color);
+}
+#taskbar ul li img{
+    max-width: 24px;
+    max-height: 24px;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    user-select: none;
+}
+#taskbar ul li:active img{
+    transform: scale(80%);
+}
+
+#taskbar > div{
+    /* style */
+    padding: 5px;
+    border-radius: 5px;
+    user-select: none;
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    /* transition */
+    transition-duration: 0.3s;
+}
+#taskbar > div:hover{
+    background-color: var(--second-background-color);
+}
+#taskbar > div img{
+    max-width: 18px;
+    max-height: 18px;
+}
+#notificationsMenu-button.unread::before{
+    content: attr(data-unread);
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    color: #ffffff;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}

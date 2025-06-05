@@ -7,12 +7,6 @@ var notificationsMenu_clearAll_button = document.getElementById("notificationsMe
 
 // Initial notifications list
 var notificationsList = [
-    {
-        id: 1,
-        icon: "wifi.svg",
-        message: "Connected to Wi-Fi network.",
-        type: "unread"
-    }
 ]
 
 // Display all notifications on load
@@ -29,19 +23,19 @@ function displayNotification(notificationData) {
     var notification = document.createElement("li")
     notification.id = `notification-${notificationData.id}`
     notification.classList.add("notification")
-    notification.innerHTML = `<img src="assets/system-icons/${notificationData.icon}" alt="notification icon"><p>${notificationData.message}</p>`
+    notification.innerHTML = `<div><img src="assets/system-icons/${notificationData.icon}" alt="svg icon"><span>${notificationData.title}</span></div><p>${notificationData.message}</p>`
     notifications_container.appendChild(notification)
     notifications = document.querySelectorAll(".notification")
     updateDeleteListeners()
 }
 
 // Add a new notification
-function newNotification(icon, message) {
-    var newNotificationData = {id: notificationsList.length + 1, icon, message, type: "unread"}
+function newNotification(title, message, icon) {
+    var newNotificationData = {id: notificationsList.length + 1, icon, title, message, type: "unread"}
     notificationsList.push(newNotificationData)
     displayNotification(newNotificationData)
     updateUnreadStatus()
-    newToast(icon, message)
+    newToast(title, message, icon)
 }
 
 // Delete a notification
@@ -82,5 +76,5 @@ notificationsMenu_clearAll_button.addEventListener("click", clearAllNotification
 
 // Example usage
 setTimeout(() => {
-    newNotification("notifications.svg", `New login at ${new Date().toLocaleTimeString()}`)
+    newNotification("New login",`New login at ${new Date().toLocaleTimeString()}`,"notifications.svg")
 }, 2000)

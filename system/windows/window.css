@@ -1,0 +1,160 @@
+.window{
+    /* position */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    min-width: 200px;
+    min-height: 200px;
+    /* style */
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--main-border-color);
+    animation: launchNewWindow 0.3s ease-out;
+    /* flexbox */
+    display: flex;
+}
+@keyframes launchNewWindow {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* *********************************************************** */
+.window .window-options{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.window .window-options span{
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    transition-duration: 0.3s;
+}
+.window .window-options span img{
+    width: 18px;
+    height: 18px;
+}
+.window .window-options span:hover{
+    background-color: var(--second-background-color);
+}
+/* *********************************************************** */
+.window .window-content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.window .window-content .window-body{
+    overflow: hidden;
+}
+/* *********************************************************** */
+.window .window-content > header{
+    height: 30px;
+    /* style */
+    padding: 0 10px;
+    background-color: var(--main-background-color);
+    user-select: none;
+    /* content */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.window .window-content > header img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* *********************************************************** */
+.window .window-content .window-body{
+    flex-grow: 1;
+    background-color: var(--main-background-color);
+}
+
+/* ************************************************************ */
+
+
+.window .window-resizer div{
+    transition-duration: 0.3s;
+    z-index: 1;
+}
+.window .window-resizer .window-resize-x{
+    height: 100%;
+    width: 6px;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+}
+.window .window-resizer .window-resize-x.resize-right{
+    right: 0px;
+}
+.window .window-resizer .window-resize-x.resize-left{
+    left: 0;
+}
+.window .window-resizer .window-resize-y{
+    width: 100%;
+    height: 6px;
+    cursor: ns-resize;
+    position: absolute;
+    left: 0;
+}
+.window .window-resizer .window-resize-y.resize-bottom{
+    bottom: 0;
+}
+.window .window-resizer .window-resize-y.resize-top{
+    top: 0;
+}
+.window .window-resizer .window-resize-xy{
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize;
+    position: absolute;
+}
+.window .window-resizer .window-resize-xy.resize-bottom-right{
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+}
+.window .window-resizer .window-resize-xy.resize-bottom-left{
+    left: 0;
+    bottom: 0;
+    cursor: nesw-resize;
+}
+.window .window-resizer .window-resize-xy.resize-top-right{
+    right: 0;
+    top: 0;
+    cursor: nesw-resize;
+}
+.window .window-resizer .window-resize-xy.resize-top-left{
+    left: 0;
+    top: 0;
+    cursor: nwse-resize;
+}
+
+.window .window-footer{
+    /* style */
+    padding: 0 10px;
+    background-color: var(--main-background-color);
+    user-select: none;
+    font-family: monospace;
+    font-weight: 300;
+    font-size: 12px;
+    border-top: 1px solid var(--main-border-color);
+    /* content */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}

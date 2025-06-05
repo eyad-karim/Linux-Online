@@ -1,9 +1,13 @@
 var startMenu = document.getElementById("startMenu")
 var startMenu_button = document.getElementById("startMenu-button")
 var desktop = document.getElementById("desktop")
+var notificationsMenu = document.getElementById("notificationsMenu")
+var controlMenu = document.getElementById("controlMenu")
 
 startMenu_button.addEventListener("click",() => {
     startMenu.classList.toggle("open")
+    notificationsMenu.classList.remove("open")
+    controlMenu.classList.remove("open")
 })
 desktop.addEventListener("click",() => {
     startMenu.classList.remove("open")

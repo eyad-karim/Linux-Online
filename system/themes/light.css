@@ -5,8 +5,10 @@ body[theme="light"] {
     --primary: #0078D4;
     --secondary: #00B4D8;
     --disapled: #A6A6A6;
-    --backgrounds-color: rgba(240, 242, 245, 0.5);
-    --text-color: #333333;
+    --main-background-color: #f1f1f1;
+    --second-background-color: #e7e7e7;
+    --main-border-color: #aaaaaa;
+    --text-color: #000000;
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
     --border-color: rgba(127, 127, 127, 0.5);

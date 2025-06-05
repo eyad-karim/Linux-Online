@@ -7,18 +7,16 @@
     <!-- Main -->
     <link rel="stylesheet" href="system/main.css">
     <!-- Toast -->
-    <link rel="stylesheet" href="system/toasts/toast.js">
-    <!-- apps menus -->
-    <link rel="stylesheet" href="system/appsMenus/taskbar/taskbar.css">
-    <link rel="stylesheet" href="system/appsMenus/startMenu/startMenu.css">
-    <!-- headerbar -->
-    <link rel="stylesheet" href="system/headerbar/nav/header.css">
-    <link rel="stylesheet" href="system/headerbar/controlMenu/controlMenu.css">
-    <link rel="stylesheet" href="system/headerbar/notificationsMenu/notificationsMenu.css">
-    <!-- AppsWindows -->
-    <link rel="stylesheet" href="system/appsWindows/appWindow.css">
+    <link rel="stylesheet" href="system/menus/taskbar/notificationsMenu/toasts/toast.css">
+    <!-- Application menus -->
+    <link rel="stylesheet" href="system/menus/startMenu/startMenu.css">
+    <link rel="stylesheet" href="system/menus/taskbar/taskbar.css">
+    <link rel="stylesheet" href="system/menus/taskbar/controlMenu/controlMenu.css">
+    <link rel="stylesheet" href="system/menus/taskbar/notificationsMenu/notificationsMenu.css">
+    <!-- windows -->
+    <link rel="stylesheet" href="system/windows/window.css">
     <!-- System Apps -->
-    <link rel="stylesheet" href="system/appsWindows/systemApps/Settings/Settings.css">
+    <link rel="stylesheet" href="system/windows/systemApps/Settings/Settings.css">
     <!-- Themes -->
     <link rel="stylesheet" href="system/themes/light.css">
     <link rel="stylesheet" href="system/themes/dark.css">
@@ -27,72 +25,56 @@
 </head>
 <body theme="dark">
     <main>
-        <header>
-            <div id="notificationsMenu-button" data-unread="1">
-                <div>
-                    <span>10 : 30 PM</span>
-                    <img src="./assets/system-icons/dots.svg" alt="notifications">
-                </div>
-            </div>
-            <div id="controlMenu-button">
-                <div>
-                    <img id="wifi-icon" src="./assets/system-icons/wifi.svg" alt="Wifi Icon">
-                    <img id="bluetooth-icon" src="./assets/system-icons/bluetooth.svg" alt="bluetooth icon">
-                    <img id="volumeRange-icon" src="./assets/system-icons/volume_down.svg" alt="Volume icon">
-                </div>
-            </div>
-        </header>
         <div id="controlMenu">
             <div id="controlMenu-head">
                 <span>Control menu</span>
-                <img src="./assets/system-icons/settings.svg" alt="settings icon">
+                <img src="./assets/system-icons/settings.svg" alt="svg icon">
             </div>
             <div id="controlMenu-quickOptions">
                 <div>
                     <label for="wifiToggle-button">
-                        <img src="./assets/system-icons/wifi.svg" alt="Wifi Icon">
+                        <img src="./assets/system-icons/wifi.svg" alt="svg icon">
                         <span>Wifi</span>
                     </label>
                     <input type="checkbox" checked id="wifiToggle-button" class="toggle-input">
                 </div>
                 <div>
                     <label for="bluetoothToggle-button">
-                        <img src="./assets/system-icons/bluetooth.svg" alt="bluetooth icon">
+                        <img src="./assets/system-icons/bluetooth.svg" alt="svg icon">
                         <span>Bluetooth</span>
                     </label>
                     <input type="checkbox" checked id="bluetoothToggle-button" class="toggle-input">
                 </div>
                 <div>
                     <label for="themeToggle-button">
-                        <img src="./assets/system-icons/mode.svg" alt="contrast icon">
+                        <img src="./assets/system-icons/mode.svg" alt="svg icon">
                         <span>Light/Dark mode</span>
                     </label>
                     <input type="checkbox" checked id="themeToggle-button" class="toggle-input">
                 </div>
                 <div>
                     <label for="volumeRange-input">
-                        <img src="./assets/system-icons/volume_up.svg" alt="Volume icon">
+                        <img src="./assets/system-icons/volume_up.svg" alt="svg icon">
                         <span>sound</span>
                     </label>
-                    <input id="volumeRange-input" type="range" min="0" max="100" value="50">
+                    <input id="volumeRange-input" title="50%" type="range" min="0" max="100" value="50">
                 </div>
             </div>
         </div>
         <div id="notificationsMenu">
             <div id="notificationsMenu-head">
                 <span>notifications menu</span>
-                <img id="notificationsMenu-clearAll-button" src="./assets/system-icons/clear_all.svg" alt="clear all icon">
-                <img src="./assets/system-icons/settings.svg" alt="settings icon">
+                <img id="notificationsMenu-clearAll-button" src="./assets/system-icons/clear_all.svg" alt="svg icon">
+                <img src="./assets/system-icons/settings.svg" alt="svg icon">
             </div>
             <ul id="notificationsMenu-container">
             </ul>
         </div>
         <div id="desktop">desktop</div>
         <div id="startMenu">
+            <input type="search" placeholder="Search apps" id="startMenuAppsSearch">
             <ul id="allAppsList">
-                <input type="search" placeholder="Search apps" id="startMenuAppsSearch">
             </ul>
-            <div>s</div>
         </div>
         <div id="taskbar">
             <ul id="taskbar-apps-ul">
@@ -100,26 +82,32 @@
                     <img src="./assets/apps-logos/Logo.png" alt="linux logo" draggable="false">
                 </li>
             </ul>
+            <div id="controlMenu-button">
+                <img id="wifi-icon" src="./assets/system-icons/wifi.svg" alt="svg icon">
+                <img id="bluetooth-icon" src="./assets/system-icons/bluetooth.svg" alt="svg icon">
+                <img id="volumeRange-icon" src="./assets/system-icons/volume_down.svg" alt="svg icon">
+            </div>
+            <div id="notificationsMenu-button" data-unread="1">
+                <span>10 : 30 PM</span>
+                <img src="./assets/system-icons/dots.svg" alt="svg icon">
+            </div>
         </div>
         <ul id="toast-container"></ul>
     </main>
-    <!-- System -->
-    <script src="system/main.js"></script>
-    <!-- Toast -->
-    <script src="system/toasts/toast.js"></script>
-    <!-- Apps Menus -->
-    <script src="system/appsMenus/startMenu/startMenu.js"></script>
-    <script src="system/appsMenus/taskbar/taskbar.js"></script>
-    <!-- header -->
-    <script src="system/headerbar/nav/headerMenusToggle.js"></script>
-    <script src="system/headerbar/notificationsMenu/notificationsMenu.js"></script>
-    <script src="system/headerbar/controlMenu/controlMenu.js"></script>
-    <!-- AppsWindows -->
-    <script src="system/appsWindows/appsWindowsProperties/appWindowResize&Drag.js"></script>
-    <script src="system/appsWindows/appsWindowsProperties/appWindowSorting.js"></script>
-    <script src="system/appsWindows/newAppWindow.js"></script>
-    <!-- apps -->
-    <script src="system/appsWindows/systemApps/Settings/Settings.js"></script>
-    <script src="system/appsWindows/systemApps/Www/Www.js"></script>
 </body>
+<!-- System -->
+<script src="system/main.js"></script>
+<!-- Menus -->
+<script src="system/menus/startMenu/startMenu.js"></script>
+<script src="system/menus/taskbar/taskbar.js"></script>
+<script src="system/menus/taskbar/controlMenu/controlMenu.js"></script>
+<script src="system/menus/taskbar/notificationsMenu/notificationsMenu.js"></script>
+<script src="system/menus/taskbar/notificationsMenu/toasts/toast.js"></script>
+<!-- Windows -->
+<script src="system/windows/windowsProperties/resize&Drag.js"></script>
+<script src="system/windows/windowsProperties/sorting.js"></script>
+<script src="system/windows/newWindow.js"></script>
+<!-- apps -->
+<script src="system/windows/systemApps/Settings/Settings.js"></script>
+<script src="system/windows/systemApps/Www/Www.js"></script>
 </html>

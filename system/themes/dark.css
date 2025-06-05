@@ -5,26 +5,15 @@ body[theme="dark"] {
     --primary: #0078D4;
     --secondary: #00B4D8;
     --disapled: #A6A6A6;
-    --backgrounds-color: rgba(30, 30, 30, 0.5);
+    --main-background-color: #1f1f1f;
+    --second-background-color: #343434;
+    --main-border-color: #555555;
     --text-color: #ffffff;
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: rgba(91, 91, 91, 0.5);
     --primary-radius: 20px;
     --blur: 10px;
 }
-body[theme="dark"] .toast img{
-    filter: invert(1);
-}
-body[theme="dark"] .appWindow .appWindow-options span img{
-    filter: invert(1);
-}
-body[theme="dark"] #controlMenu img{
-    filter: invert(1);
-}
-body[theme="dark"] main > header img{
-    filter: invert(1);
-}
-body[theme="dark"] #notificationsMenu img{
+body[theme="dark"] img[alt="svg icon"]{
     filter: invert(1);
 }

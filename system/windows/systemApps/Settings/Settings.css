@@ -1,15 +1,13 @@
-.Settings-appWindow-style .appWindow-content .appWindow-body{
+.Settings-window-style .window-content .window-body{
     display: flex;
     flex-direction: row;
     align-items: stretch;
     gap: 10px;
     padding: 10px;
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
 }
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu{
-    background-color: var(--backgrounds-color);
-    border: 1px solid var(--border-color);
+.Settings-window-style .window-content .window-body .Settings-menu{
+    background-color: var(--main-background-color);
+    border: 1px solid var(--main-border-color);
     border-radius: 10px;
     padding: 10px;
     list-style-type: none;
@@ -18,26 +16,25 @@
     flex-direction: column;
     gap: 5px;
 }
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu h2{
+.Settings-window-style .window-content .window-body .Settings-menu h2{
     color: var(--primary);
     font-size: 1.5em;
     margin: 0;
     padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--main-border-color);
 }
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu li{
+.Settings-window-style .window-content .window-body .Settings-menu li{
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     transition: 0.3s;
     border: 1px solid transparent;
 }
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-menu li:hover{
-    background-color: var(--backgrounds-color);
-    border: 1px solid var(--border-color);
+.Settings-window-style .window-content .window-body .Settings-menu li:hover{
+    background-color: var(--second-background-color);
 }
 
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content{
+.Settings-window-style .window-content .window-body .Settings-content{
     border-radius: 10px;
     padding: 10px;
     flex-grow: 1;
@@ -47,15 +44,18 @@
     overflow: auto;
 }
 
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content h2{
+.Settings-window-style .window-content .window-body .Settings-content h2{
     color: var(--primary);
     font-size: 1.5em;
     margin: 0 0 10px 0;
     padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--main-border-color);
 }
-.Settings-appWindow-style .appWindow-content .appWindow-body .Settings-content .settings-section{
+.Settings-window-style .window-content .window-body .Settings-content .settings-section{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 /* input type file */
 label.input-type-file + input[type="file"]{
@@ -65,8 +65,8 @@ label.input-type-file {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid var(--border-color);
-    background-color: var(--backgrounds-color);
+    border: 1px solid var(--main-border-color);
+    background-color: var(--second-background-color);
     color: var(--primary);
     transition: 0.3s;
 }
@@ -84,8 +84,8 @@ label.input-type-color {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid var(--border-color);
-    background-color: var(--backgrounds-color);
+    border: 1px solid var(--main-border-color);
+    background-color: var(--second-background-color);
     color: var(--primary);
     transition: 0.3s;
 }
@@ -107,16 +107,25 @@ label.input-type-color:hover {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 .card{
-    background-color: var(--backgrounds-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--main-background-color);
+    border: 1px solid var(--main-border-color);
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     transition: 0.3s;
+}
+.card > header{
+    background-color: var(--second-background-color);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

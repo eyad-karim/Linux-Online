@@ -4,6 +4,7 @@
     right: 10px;
     display: flex;
     flex-direction: column-reverse;
+    align-items: flex-end;
     gap: 10px;
     z-index: 301;
 }
@@ -13,14 +14,13 @@
     left: 150%;
     min-width: 300px;
     max-width: 500px;
-    padding: 15px;
-    background-color: var(--backgrounds-color);
-    backdrop-filter: blur(var(--blur));
+    padding: 20px;
+    background-color: var(--main-background-color);
     border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--main-border-color);
     display: flex;
-    flex-direction: row;
-    gap: 5px;
+    flex-direction: column;
+    gap: 10px;
     animation: toast 3s;
 }
 @keyframes toast {
@@ -37,7 +37,13 @@
         left: 150%;
     }
 }
-.toast > img {
-    width: 30px;
-    height: 30px;
+.toast > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.toast > div > img {
+    width: 18px;
+    height: 18px;
 }

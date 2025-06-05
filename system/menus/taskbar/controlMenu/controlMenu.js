@@ -3,19 +3,24 @@ var controlMenu_button = document.getElementById("controlMenu-button")
 var volumeRange_input = document.getElementById("volumeRange-input")
 var volumeRange_icon = document.getElementById("volumeRange-icon")
 
+
+
 // volume range icon
 function checkTheVolumeRange() {
-    if (volumeRange_input.value >= 66 ) {
-        return "volume_up"
-    } else if (volumeRange_input.value >= 33 && volumeRange_input.value < 66) {
-        return "volume_down"
-    } else {
-        return "volume_mute"
+    var value = volumeRange_input.value;
+    switch (true) {
+        case value > 50:
+            return "volume_up";
+        case value > 0 && value <= 50:
+            return "volume_down";
+        default:
+            return "volume_mute";
     }
 }
 
-volumeRange_input.addEventListener("mousemove",() => {
+volumeRange_input.addEventListener("input",() => {
     volumeRange_icon.setAttribute("src",`./assets/system-icons/${checkTheVolumeRange()}.svg`)
+    volumeRange_input.title = volumeRange_input.value + "%";
 })
 
 // wifi icon
@@ -25,8 +30,10 @@ var wifi_icon = document.getElementById("wifi-icon");
 wifiToggle_button.addEventListener("change", () => {
     if (wifiToggle_button.checked) {
         wifi_icon.setAttribute("src", "./assets/system-icons/wifi.svg");
+        newNotification("Wi-Fi is turned on", "You can manage your Wi-Fi connections from the control menu.", "wifi.svg");
     } else {
         wifi_icon.setAttribute("src", "./assets/system-icons/wifi_off.svg");
+        newNotification("Wi-Fi is turned off", "You can turn it on again from the control menu.", "wifi_off.svg");
     }
 });
 

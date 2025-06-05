@@ -20,8 +20,8 @@ body {
 input[type="search"],input[type="text"], textarea {
     padding: 10px;
     border-radius: 5px;
-    background-color: var(--backgrounds-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--second-background-color);
+    border: 1px solid var(--main-border-color);
     outline: 0;
     color: var(--text-color);
     transition-duration: 0.3s;
@@ -149,16 +149,14 @@ input[type="range"]::-ms-fill-upper {
 button{
     padding: 10px;
     border-radius: 5px;
-    background-color: var(--primary);
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-    border: 1px solid var(--border-color);
+    background-color: var(--second-background-color);
+    border: 1px solid var(--main-border-color);
     outline: 0;
     transition-duration: 0.3s;
 }
 
 button:hover{
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 main {
@@ -169,4 +167,33 @@ main {
 #desktop {
     width: 100vw;
     height: 100vh;
+}
+*[title] {
+    position: relative;
+    cursor: pointer;
+}
+*[title]::after {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--second-background-color);
+    border: 1px solid var(--main-border-color);
+    color: var(--text-color);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+*[title]:hover::after{
+    opacity: 1;
+}
+
+hr{
+    border-color: var(--main-border-color);
+    margin: 50px 0;
 }
