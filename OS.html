@@ -6,9 +6,11 @@
     <title>Linux Online</title>
     <!-- Main -->
     <link rel="stylesheet" href="system/main.css">
+    <!-- Desktop -->
+    <link rel="stylesheet" href="system/desktop/desktop.css">
     <!-- Toast -->
     <link rel="stylesheet" href="system/menus/taskbar/notificationsMenu/toasts/toast.css">
-    <!-- Application menus -->
+    <!-- menus -->
     <link rel="stylesheet" href="system/menus/startMenu/startMenu.css">
     <link rel="stylesheet" href="system/menus/taskbar/taskbar.css">
     <link rel="stylesheet" href="system/menus/taskbar/controlMenu/controlMenu.css">
@@ -25,6 +27,18 @@
 </head>
 <body theme="dark">
     <main>
+        <div id="desktop">
+            <div id="desktop-icons">
+                <div class="desktop-icon" id="settings-icon">
+                    <img src="./assets/apps-logos/Settings.png" alt="settings icon" draggable="false">
+                    <span>Settings</span>
+                </div>
+                <div class="desktop-icon" id="www-icon">
+                    <img src="./assets/apps-logos/Www.png" alt="www icon" draggable="false">
+                    <span>Www</span>
+                </div>
+            </div>
+        </div>
         <div id="controlMenu">
             <div id="controlMenu-head">
                 <span>Control menu</span>
@@ -70,7 +84,6 @@
             <ul id="notificationsMenu-container">
             </ul>
         </div>
-        <div id="desktop">desktop</div>
         <div id="startMenu">
             <input type="search" placeholder="Search apps" id="startMenuAppsSearch">
             <ul id="allAppsList">
@@ -97,6 +110,7 @@
 </body>
 <!-- System -->
 <script src="system/main.js"></script>
+<script src="system/desktop/desktop.js"></script>
 <!-- Menus -->
 <script src="system/menus/startMenu/startMenu.js"></script>
 <script src="system/menus/taskbar/taskbar.js"></script>
