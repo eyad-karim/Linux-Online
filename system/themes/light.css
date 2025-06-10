@@ -11,7 +11,5 @@ body[theme="light"] {
     --text-color: #000000;
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: rgba(127, 127, 127, 0.5);
     --primary-radius: 20px;
-    --blur: 10px;
 }

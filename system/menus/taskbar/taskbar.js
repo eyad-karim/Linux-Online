@@ -16,17 +16,18 @@ var taskbar_apps_list = [
     },
 ]
 
-function addTaskbar_app(appName, appIcon) {
+function addTaskbar_app(appName, appIcon, n) {
     var app = document.createElement("li")
     app.id = `${appName}-taskbarOpenButton`
     app.classList.add("taskbar-app")
+    app.style.animationDelay = `${n * 0.1}s`
     app.innerHTML = `<img src="./assets/apps-logos/${appIcon}" alt="${appName}" draggable="false">`
     taskbar_apps_ul.appendChild(app)
     taskbar_apps_list.push({appName, appIcon})
 }
 
 taskbar_apps_list.forEach(app => {
-    addTaskbar_app(app.appName, app.appIcon)
+    addTaskbar_app(app.appName, app.appIcon, taskbar_apps_list.indexOf(app) + 4)
 })
 
 var taskbar_apps = document.querySelectorAll(".taskbar-app")

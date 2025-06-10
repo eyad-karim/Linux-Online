@@ -12,7 +12,6 @@ body[theme="dark"] {
     /* effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
     --primary-radius: 20px;
-    --blur: 10px;
 }
 body[theme="dark"] img[alt="svg icon"]{
     filter: invert(1);
