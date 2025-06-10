@@ -1,12 +1,14 @@
 #notificationsMenu{
     /* position */
     position: fixed;
-    bottom: calc(-100vh - 100%);
+    bottom: 0;
+    visibility: hidden;
     left: 50%;
     transform: translate(-50%, 0);
     /* area */
     width: 500px;
     /* style */
+    opacity: 0;
     background-color: var(--main-background-color);
     border-radius: 10px;
     border: 1px solid var(--main-border-color);
@@ -17,7 +19,6 @@
     gap: 5px;
     /* transition */
     transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.6, 0.05, 0.15, 0.95);
     /* others */
     overflow: hidden;
     user-select: none;
@@ -25,7 +26,10 @@
 }
 
 #notificationsMenu.open{
+    opacity: 1;
     bottom: 65px;
+    visibility: visible;
+    transition-duration: 0.5s;
 }
 
 #notificationsMenu > div#notificationsMenu-head{
